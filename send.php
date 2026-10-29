@@ -9,8 +9,6 @@
 const TO_EMAIL   = 'admin@hillsandharbour.com.au';
 const FROM_EMAIL = 'no-reply@hillsandharbour.com.au';
 const FROM_NAME  = 'Hills & Harbour website';
-// Signs the "not a robot" tokens. Keep it private; any long random string works.
-const SECRET     = '107529b9d5ee232edd5ab57081e9edec2c6b767899d7b85070674fad10339604';
 const MIN_SECONDS = 3;      // a person takes at least this long between ticking the box and sending
 const MAX_SECONDS = 7200;   // tokens expire after two hours
 const MAX_PER_HOUR = 6;     // per IP address
@@ -30,6 +28,16 @@ function clean($v, $max = 200) {
   return mb_substr($v, 0, $max);
 }
 function one_line($v) { return preg_replace('/[\r\n]+/', ' ', $v); }
+
+// The secret that signs "not a robot" tokens lives in send-config.php, which is kept out of git.
+// The server writes it with a fresh random value the first time this script runs.
+$cfgFile = __DIR__ . '/send-config.php';
+if (!is_file($cfgFile)) {
+  @file_put_contents($cfgFile, "<?php\nreturn ['secret' => '" . bin2hex(random_bytes(32)) . "'];\n", LOCK_EX);
+}
+$cfg = is_file($cfgFile) ? include $cfgFile : null;
+if (empty($cfg['secret'])) reply(false, 'Enquiries are unavailable just now. Please email admin@hillsandharbour.com.au or call 0415 386 318.', 500);
+define('SECRET', $cfg['secret']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['token'])) {
   $t = time();

@@ -30,6 +30,8 @@ Upload everything except `.claude/`, `README.md` and `.gitignore` to the web roo
 
 The forms need PHP with `mail()` (standard on cPanel). Before going live:
 
+- `send.php` creates `send-config.php` next to itself on first use, holding a random secret for the "not a robot" check. It is kept out of git; don't upload or commit one. If the web root isn't writable, create it by hand: `<?php return ['secret' => '<64 random hex characters>'];`
+
 - Make sure `no-reply@hillsandharbour.com.au` may send for the domain (SPF record), or change `FROM_EMAIL`.
 - If the domain's email is hosted elsewhere (Google Workspace, Microsoft 365), set cPanel's Email Routing to "Remote Mail Exchanger" so mail to admin@ leaves the server.
 - Send a test enquiry from the live contact page.

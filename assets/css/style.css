@@ -1079,8 +1079,8 @@ body.menu-open .mobile-menu [data-mm] { opacity: 1; transform: none; }
 .blueprint__roll-inner { display: flex; flex-direction: column; }
 .blueprint__roll-inner span { display: block; height: 1.05em; color: var(--green); }
 .blueprint__frame {
-  --w: min(62vw, calc((100svh - 230px) * 4 / 3), 1100px);
-  position: relative; z-index: 2; width: var(--w); height: calc(var(--w) * 0.75); margin-top: 40px;
+  --w: min(76vw, calc((100svh - 230px) * 1672 / 941), 1280px);
+  position: relative; z-index: 2; width: var(--w); height: calc(var(--w) * 941 / 1672); margin-top: 40px;
   background: #171717; will-change: width, height;
 }
 .blueprint__photo { position: absolute; inset: 0; overflow: hidden; clip-path: inset(100% 0 0 0); }
@@ -1107,7 +1107,7 @@ body.menu-open .mobile-menu [data-mm] { opacity: 1; transform: none; }
 @media (max-width: 700px) {
   .blueprint__head { flex-direction: column; align-items: start; gap: 10px; }
   .blueprint__words { font-size: clamp(34px, 11vw, 52px); }
-  .blueprint__frame { --w: min(90vw, calc((100svh - 260px) * 4 / 3)); margin-top: 72px; }
+  .blueprint__frame { --w: min(90vw, calc((100svh - 260px) * 1672 / 941)); margin-top: 72px; }
   .blueprint__meta { flex-direction: column; gap: 4px; bottom: 20px; }
   .blueprint__copy { flex-direction: column; align-items: start; bottom: 32px; }
   .blueprint .bt { font-size: 22px; }
@@ -1292,3 +1292,17 @@ body.modal-open { overflow: hidden; }
 .form.is-sending button[type="submit"] { pointer-events: none; opacity: 0.7; }
 .form-success:focus { outline: none; }
 @media (max-width: 600px) { .hcheck { max-width: none; } .form__foot .btn { width: 100%; } }
+
+/* Project page titles: one line on desktop, two at most on phones */
+.proj-title { font-size: clamp(34px, 5.6vw, 92px) !important; line-height: 0.95; letter-spacing: -0.045em; max-width: none !important; }
+.cta__row--solo { grid-template-columns: 1fr; }
+
+/* Project heroes on phones: the whole image at its own proportions, details underneath */
+@media (max-width: 760px) {
+  .proj-hero { height: auto; min-height: 0; padding-top: var(--header-h); }
+  .proj-hero__img { position: relative; inset: auto; }
+  .proj-hero__img img { height: auto; transform: none !important; }
+  .proj-hero__shade { display: none; }
+  .proj-hero__content { position: relative; inset: auto; padding: 28px 0 44px; }
+  .proj-hero .img-tag { top: calc(var(--header-h) + 12px); }
+}

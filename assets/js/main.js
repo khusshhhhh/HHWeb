@@ -723,7 +723,10 @@
   $$('[data-parallax]').forEach((el) => {
     const img = $('img', el) || el;
     const amt = parseFloat(el.dataset.parallax) || 12;
-    gsap.fromTo(img, { yPercent: -amt }, { yPercent: amt, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
+    const run = () => gsap.fromTo(img, { yPercent: -amt }, { yPercent: amt, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
+    // Project heroes show the whole image on phones, so they only drift on wider screens
+    if (el.closest('.proj-hero')) mm.add('(min-width: 761px)', run);
+    else run();
   });
 
   // Hero: drift title and hills on scroll
@@ -745,10 +748,11 @@
     const sel = (s) => $$(s, bp);
     mm.add({ wide: '(min-width: 701px)', narrow: '(max-width: 700px)' }, (ctx) => {
       const narrow = ctx.conditions.narrow;
-      // The frame starts as a 4:3 sheet in the middle of the screen and ends as the whole screen
+      // The frame starts as a sheet the shape of the render (1672 × 941) and ends as the whole screen
+      const ratio = 941 / 1672;
       const sheet = () => {
-        const w = Math.min(innerWidth * (narrow ? 0.9 : 0.62), (innerHeight - (narrow ? 260 : 230)) * (4 / 3), 1100);
-        return { width: w, height: w * 0.75 };
+        const w = Math.min(innerWidth * (narrow ? 0.9 : 0.76), (innerHeight - (narrow ? 260 : 230)) / ratio, 1280);
+        return { width: w, height: w * ratio };
       };
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
