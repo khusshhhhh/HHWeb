@@ -620,11 +620,16 @@
   const nextEl = $('[data-next-project]');
   if (nextEl) {
     const LIST = [
-      ['glenunga', 'Glenunga', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=72', 'Development · In planning'],
+      ['glenunga', 'Glenunga', '../assets/img/projects/glenunga-render.webp', 'Development · In planning'],
       ['ingle-farm', 'Ingle Farm', '../assets/img/projects/ingle-farm-exterior.jpg', 'Development · Complete'],
       ['parafield-gardens', 'Parafield Gardens', '../assets/img/projects/parafield-gardens-render.jpg', 'Development · Planning granted'],
       ['payneham-south', 'Payneham South', '../assets/img/projects/payneham-south-front.jpg', 'Custom house · In construction'],
       ['telowie-avenue', 'Telowie Avenue', '../assets/img/projects/telowie-avenue-render.webp', 'Custom house · In construction'],
+      ['holden-hill', 'Holden Hill', '../assets/img/projects/holden-hill-render.webp', 'Development · Starts soon'],
+      ['enfield', 'Enfield', '../assets/img/projects/enfield-render.webp', 'Development · Construction started'],
+      ['salisbury-downs', 'Salisbury Downs', '../assets/img/projects/salisbury-downs-render.webp', 'Development · Construction started'],
+      ['salisbury-downs-residence', 'Salisbury Downs Residence', '../assets/img/projects/salisbury-downs-residence-render.webp', 'Custom house · Starts soon'],
+      ['marion', 'Marion', '../assets/img/projects/marion-render.webp', 'Development · Starts soon'],
       ['davoren-park', 'Davoren Park', 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2000&q=72', 'Development · Approved'],
     ];
     let last = '';
@@ -639,16 +644,18 @@
     $('.display-xl', nextEl).textContent = name + ' →';
   }
 
-  /* ---------- Dot-matrix map of metropolitan Adelaide, Broadview highlighted ---------- */
+  /* ---------- Dot-matrix map of metropolitan Adelaide, one suburb highlighted (Broadview by default) ---------- */
   const dotmap = $('.dotmap canvas');
   if (dotmap) {
-    // Roughly 24 km square around metropolitan Adelaide
-    const W = 138.4, E = 138.74, N = -34.78, S = -35.06;
-    const LAND = [[138.74,-34.78],[138.481,-34.78],[138.476,-34.81],[138.48,-34.84],[138.488,-34.88],[138.493,-34.91],[138.503,-34.95],[138.512,-34.98],[138.516,-35.0],[138.52,-35.03],[138.508,-35.06],[138.74,-35.06]];
-    const HILLS = [[138.74,-34.78],[138.70,-34.78],[138.69,-34.83],[138.67,-34.88],[138.655,-34.93],[138.64,-34.97],[138.625,-35.0],[138.615,-35.06],[138.74,-35.06]];
+    // Roughly 30 km square around metropolitan Adelaide, Salisbury to Marion
+    const W = 138.4, E = 138.74, N = -34.74, S = -35.06;
+    const LAND = [[138.74,-34.74],[138.50,-34.74],[138.49,-34.76],[138.481,-34.78],[138.476,-34.81],[138.48,-34.84],[138.488,-34.88],[138.493,-34.91],[138.503,-34.95],[138.512,-34.98],[138.516,-35.0],[138.52,-35.03],[138.508,-35.06],[138.74,-35.06]];
+    const HILLS = [[138.74,-34.74],[138.71,-34.74],[138.70,-34.78],[138.69,-34.83],[138.67,-34.88],[138.655,-34.93],[138.64,-34.97],[138.625,-35.0],[138.615,-35.06],[138.74,-35.06]];
     const CBD = [[138.587,-34.917],[138.614,-34.917],[138.614,-34.937],[138.587,-34.937]];
-    const BROADVIEW = [[138.604,-34.869],[138.625,-34.869],[138.625,-34.885],[138.604,-34.885]];
-    const FOCUS = [138.6145, -34.877];
+    const box = dotmap.parentElement.dataset;
+    const FOCUS = box.lon ? [+box.lon, +box.lat] : [138.6145, -34.877];
+    const [fx, fy] = FOCUS;
+    const AREA = [[fx - 0.0105, fy + 0.008], [fx + 0.0105, fy + 0.008], [fx + 0.0105, fy - 0.008], [fx - 0.0105, fy - 0.008]];
     const inPoly = (x, y, poly) => {
       let inside = false;
       for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
@@ -678,7 +685,7 @@
           let c = '#3c3c3c', r = rDot;
           if (inPoly(lon, lat, HILLS)) c = '#6b6b6b';
           if (inPoly(lon, lat, CBD)) c = '#bdbdbd';
-          if (inPoly(lon, lat, BROADVIEW)) { c = '#2fd27a'; r = rDot * 1.6; }
+          if (inPoly(lon, lat, AREA)) { c = '#2fd27a'; r = rDot * 1.6; }
           dots.push([x, y, Math.hypot(x - focus[0], y - focus[1]), c, r]);
         }
       }

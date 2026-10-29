@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marion Homes · Hills & Harbour</title>
+<meta name="description" content="Two new single-storey homes in Marion, South Australia. Construction starts soon.">
+<meta name="theme-color" content="#141414">
+<meta property="og:title" content="Marion Homes · Hills & Harbour">
+<meta property="og:description" content="Two new single-storey homes in Marion, South Australia. Construction starts soon.">
+<meta property="og:image" content="https://hillsandharbour.com.au/assets/img/projects/marion-render.webp">
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  (function (r) {
+    try {
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!sessionStorage.getItem('hh-loaded') && !calm) r.classList.add('is-loading');
+      if (sessionStorage.getItem('hh-pt')) { r.classList.add('pt-in'); sessionStorage.removeItem('hh-pt'); }
+    } catch (e) {}
+    setTimeout(function () { r.classList.remove('is-loading', 'pt-in'); }, 6000);
+  })(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <img class="reveal-a" src="../assets/img/hh-logo-white.png" alt="">
+    <img class="reveal-b" src="../assets/img/hh-logo-white.png" alt="">
+  </div>
+  <div class="loader__meta">
+    <span>Adelaide, South Australia</span>
+    <span class="loader__count">000</span>
+    <span>Project management</span>
+  </div>
+  <div class="loader__bar"></div>
+</div>
+<div class="pt" aria-hidden="true"><img src="../assets/img/hh-logo-white.png" alt=""></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"><span></span></div></div>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a class="brand-logo" href="../index.html" aria-label="Hills &amp; Harbour, home">
+      <img class="logo-white" src="../assets/img/hh-logo-white.png" alt="" width="128" height="49">
+      <img class="logo-black" src="../assets/img/hh-logo-black.png" alt="" width="128" height="49">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html" data-nav="projects" aria-current="page"><span>Projects</span></a></li>
+        <li class="nav__item--drop">
+          <a class="nav__link" href="../index.html#services" data-nav="services" aria-haspopup="true"><span>Services</span>
+            <svg class="nav__caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="../custom-houses.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">01 · Service</span>
+              <span class="dropdown__title">Custom Houses</span>
+              <span class="dropdown__desc">One home, planned around your block and your brief.</span>
+            </a>
+            <a href="../development-projects.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">02 · Service</span>
+              <span class="dropdown__title">Development Projects</span>
+              <span class="dropdown__desc">Land, subdivision and multiple dwellings, run as one project.</span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="../about.html" data-nav="about"><span>About</span></a></li>
+        <li><a class="nav__link" href="../contact.html" data-nav="contact"><span>Contact</span></a></li>
+      </ul>
+      <a class="btn btn--green" href="../contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-lenis-prevent>
+  <div class="mobile-menu__top" data-mm>
+    <span><span class="live-dot"></span>Adelaide · <span data-clock></span></span>
+    <span>Menu</span>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li data-mm><a href="../index.html" data-nav="home"><small>01</small><span>Home</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../projects/index.html" data-nav="projects" aria-current="page"><small>02</small><span>Projects</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../about.html" data-nav="about"><small>03</small><span>About</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../contact.html" data-nav="contact"><small>04</small><span>Contact</span><i aria-hidden="true">→</i></a></li>
+    </ul>
+    <p class="mobile-menu__label" data-mm>Services</p>
+    <div class="mobile-menu__services">
+      <a href="../custom-houses.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 01</small><span>Custom Houses</span>
+      </a>
+      <a href="../development-projects.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 02</small><span>Development Projects</span>
+      </a>
+    </div>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="mobile-menu__call" href="tel:+61415386318" data-mm><small>Call Khush</small><span>0415 386 318</span></a>
+    <a class="mobile-menu__call" href="tel:+61406437761" data-mm><small>Call Vivek</small><span>0406 437 761</span></a>
+    <a class="mobile-menu__mail" href="mailto:admin@hillsandharbour.com.au" data-mm><small>Email</small><span>admin@hillsandharbour.com.au</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="proj-hero" data-header="dark">
+  <div class="proj-hero__img" data-parallax="8"><img src="../assets/img/projects/marion-render.webp" alt="Two single-storey rendered homes with dark feature frames, white garage doors and lit front gardens"></div>
+  <div class="proj-hero__shade"></div>
+  <span class="img-tag">Artist's impression</span>
+  <div class="proj-hero__content">
+    <div class="container">
+      <nav class="page-hero__crumbs" aria-label="Breadcrumb" data-reveal="fade" style="margin:0"><a href="../index.html">Home</a><span>/</span><a href="index.html">Projects</a><span>/</span><span>Marion</span></nav>
+      <div class="chips" data-reveal="fade">
+        <span class="chip chip--dark">Construction starts soon</span>
+        <span class="chip">Development</span>
+      </div>
+      <h1 class="display-xxl proj-title" data-split>Marion Homes.</h1>
+      <div class="proj-hero__row" data-reveal style="--d:500ms">
+        <p class="lead">Two four-bedroom homes. Construction starts soon.</p>
+        <div class="cta__contacts" style="gap:48px">
+          <div><span class="label" style="color:#a8a8a8">Location</span><span>Marion, SA 5043</span></div>
+          <div><span class="label" style="color:#a8a8a8">Type</span><span>2 single-storey homes</span></div>
+          <div><span class="label" style="color:#a8a8a8">Status</span><span>Construction starts soon</span></div>
+        </div>
+      </div>
+      <div class="btn-row" data-reveal style="--d:650ms"><button class="btn btn--green" type="button" data-modal-open="dev-enquiry" data-project="Marion Homes" data-magnetic>Enquire about this project <span class="arrow">→</span></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="sticky-split">
+      <div class="sticky-split__aside">
+        <p class="kicker">01 / Overview</p>
+        <h2 class="display-md" data-split>Two homes, side by side.</h2>
+        <p class="lead muted" data-reveal>One Marion site, split into two lots.</p>
+      </div>
+      <div>
+        <div class="body-copy" data-reveal>
+          <p>The site is split into two lots of 293.16 m² each, with a single-storey home on each. Both homes have four bedrooms, with an ensuite and walk-in robe to the main bedroom.</p>
+          <p class="muted">Each home has an open kitchen and meals area, a family bathroom, a garage to the street and an alfresco at the rear. The City of Marion has granted development approval.</p>
+        </div>
+        <table class="fact-table mt-m" data-reveal>
+          <caption class="visually-hidden">Project facts</caption>
+          <tbody>
+            <tr><th scope="row">Location</th><td>Marion, SA 5043</td></tr>
+            <tr><th scope="row">Dwellings</th><td>2 single-storey homes</td></tr>
+            <tr><th scope="row">Site</th><td>17.66 m × 33.20 m</td></tr>
+            <tr><th scope="row">Lots</th><td>293.16 m² each (586.32 m² in total)</td></tr>
+            <tr><th scope="row">Each home</th><td>4 bedrooms · ensuite and walk-in robe · meals · garage · alfresco</td></tr>
+            <tr><th scope="row">Total floor area</th><td>357.38 m² across both homes</td></tr>
+            <tr><th scope="row">Approval</th><td>Development approval granted, City of Marion</td></tr>
+            <tr><th scope="row">Status</th><td>Construction starts soon</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light" style="padding-top:0">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat" data-reveal><div class="stat-num"><span data-count="2">2</span></div><div class="stat-label">New homes</div><div class="stat-note">Single storey</div></div>
+      <div class="stat" data-reveal style="--d:120ms"><div class="stat-num"><span data-count="4">4</span></div><div class="stat-label">Bedrooms each</div><div class="stat-note">Main with ensuite</div></div>
+      <div class="stat stat--hl" data-reveal style="--d:240ms"><div class="stat-num"><span data-count="357">357</span><small>m²</small></div><div class="stat-label">Floor area</div><div class="stat-note">Both homes, incl. garages</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">02 / Site plan</p>
+      <h2 class="display-md" data-split>Two lots, one street front.</h2>
+      <p class="lead muted" data-reveal>A quick look at the layout, traced from the working drawings.</p>
+    </div>
+    <figure>
+      <div class="drawing-panel" style="border:1px solid #d6d6d6">
+        <svg viewBox="0 0 800 400" role="img" aria-label="Schematic site plan: two homes on two lots side by side, each with a garage to the street">
+          <path class="dl dl--thin" pathLength="1" d="M70 34H744M70 28v12M744 28v12"/>
+          <text class="dt" x="407" y="22" text-anchor="middle">33.20 m</text>
+          <path class="dl dl--thin" pathLength="1" d="M50 60V364M44 60h12M44 364h12"/>
+          <text class="dt" x="36" y="212" text-anchor="middle" transform="rotate(-90 36 212)">17.66 m</text>
+          <rect class="dl dl--green" pathLength="1" x="70" y="60" width="674" height="304"/>
+          <path class="dl" pathLength="1" d="M70 212H744"/>
+          <rect class="dl dl--thin bld" pathLength="1" x="170" y="76" width="470" height="120"/>
+          <rect class="dl dl--thin" pathLength="1" x="570" y="150" width="70" height="46"/>
+          <text class="dt" x="605" y="177" text-anchor="middle">GAR</text>
+          <rect class="dl dl--thin" pathLength="1" x="120" y="110" width="50" height="60" stroke-dasharray="4 4"/>
+          <rect class="dl dl--thin bld" pathLength="1" x="170" y="228" width="470" height="120"/>
+          <rect class="dl dl--thin" pathLength="1" x="570" y="228" width="70" height="46"/>
+          <text class="dt" x="605" y="255" text-anchor="middle">GAR</text>
+          <rect class="dl dl--thin" pathLength="1" x="120" y="250" width="50" height="60" stroke-dasharray="4 4"/>
+          <text class="dt dt--b" x="380" y="132" text-anchor="middle">LOT 1</text><text class="dt" x="380" y="150" text-anchor="middle">293.16 m²</text>
+          <text class="dt dt--b" x="380" y="300" text-anchor="middle">LOT 2</text><text class="dt" x="380" y="318" text-anchor="middle">293.16 m²</text>
+          <path class="dl dl--thin" pathLength="1" d="M766 16V384"/>
+          <text class="dt" x="784" y="200" text-anchor="middle" transform="rotate(90 784 200)">STREET</text>
+          <rect class="fill-green" x="734" y="207" width="10" height="10"/>
+        </svg>
+      </div>
+      <figcaption class="caption mt-s">Schematic only. Not to scale.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band band--black grid-bg" data-header="dark">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">03 / Lot by lot</p>
+      <h2 class="display-md" data-split>The numbers from the working drawings.</h2>
+      <p class="lead muted" data-reveal>Areas as set out on the stamped drawings.</p>
+    </div>
+    <div class="split-2" style="align-items:start">
+      <table class="fact-table" data-reveal>
+        <caption class="label" style="text-align:left;padding-bottom:12px">Lot 1</caption>
+        <tbody>
+          <tr><th scope="row">Lot</th><td>293.16 m²</td></tr>
+          <tr><th scope="row">Living</th><td>140.11 m²</td></tr>
+          <tr><th scope="row">Garage</th><td>20.28 m²</td></tr>
+          <tr><th scope="row">Alfresco</th><td>13.95 m²</td></tr>
+          <tr><th scope="row">Porch</th><td>4.35 m²</td></tr>
+          <tr><th scope="row">Total floor area</th><td>178.69 m²</td></tr>
+          <tr><th scope="row">Site coverage</th><td>60.95%</td></tr>
+          <tr><th scope="row">Private open space</th><td>43.89 m²</td></tr>
+          <tr><th scope="row">Landscaping</th><td>56.16 m² (19.16%)</td></tr>
+        </tbody>
+      </table>
+      <table class="fact-table" data-reveal style="--d:120ms">
+        <caption class="label" style="text-align:left;padding-bottom:12px">Lot 2</caption>
+        <tbody>
+          <tr><th scope="row">Lot</th><td>293.16 m²</td></tr>
+          <tr><th scope="row">Living</th><td>140.11 m²</td></tr>
+          <tr><th scope="row">Garage</th><td>20.28 m²</td></tr>
+          <tr><th scope="row">Alfresco</th><td>13.95 m²</td></tr>
+          <tr><th scope="row">Porch</th><td>4.35 m²</td></tr>
+          <tr><th scope="row">Total floor area</th><td>178.69 m²</td></tr>
+          <tr><th scope="row">Site coverage</th><td>60.95%</td></tr>
+          <tr><th scope="row">Private open space</th><td>43.89 m²</td></tr>
+          <tr><th scope="row">Landscaping</th><td>56.16 m² (19.16%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--black" data-header="dark">
+  <div class="container">
+    <div class="split-2">
+      <div class="section-head" style="margin:0">
+        <p class="kicker">04 / Location</p>
+        <h2 class="display-lg" data-split>Marion, in the south-west.</h2>
+        <p class="lead muted" data-reveal>Near Westfield Marion and the Tonsley innovation district, between the city and the coast.</p>
+      </div>
+      <div class="dotmap" data-lon="138.553" data-lat="-35.01" aria-label="Dot map of metropolitan Adelaide with Marion marked in green" role="img">
+        <canvas></canvas>
+        <div class="dotmap__pin" data-lon="138.553" data-lat="-35.01">Marion<small>Adelaide, SA</small></div>
+        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.6005" data-lat="-34.948">Adelaide CBD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="next-project" href="holden-hill.html" data-header="dark" data-cursor="Next" data-next-project="marion">
+  <div class="next-project__bg"><img src="../assets/img/projects/holden-hill-render.webp" alt="" loading="lazy"></div>
+  <div class="container next-project__inner">
+    <p class="kicker">Next project</p>
+    <p class="display-xl mt-s">Holden Hill →</p>
+  </div>
+</a>
+
+<section class="band band--black cta" data-header="dark" aria-labelledby="cta-title">
+  <div class="container">
+    <p class="kicker" data-reveal>Start a project</p>
+    <h2 id="cta-title" class="visually-hidden">Let's build something together.</h2>
+  </div>
+  <div class="marquee mt-m" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Let's build something together. <i></i></span>
+      <span class="marquee__item">Let's build something together. <i></i></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cta__row cta__row--solo"><div data-reveal><button class="btn btn--green" type="button" data-modal-open="dev-enquiry" data-project="Marion Homes" data-magnetic>Enquire about this project <span class="arrow">→</span></button></div></div>
+  </div>
+</section>
+
+<div class="modal modal--enquire" id="dev-enquiry" role="dialog" aria-modal="true" aria-labelledby="dev-enquiry-title" aria-hidden="true">
+  <div class="modal__scrim" data-modal-close></div>
+  <div class="modal__panel" data-lenis-prevent>
+    <div class="modal__bar"><span>Development enquiry</span><button class="modal__close" type="button" data-modal-close aria-label="Close enquiry"><span></span><span></span></button></div>
+    <div class="enquire">
+      <aside class="enquire__aside grid-bg" data-m>
+        <div class="enquire__img"><img alt="" data-enquire-img></div>
+        <div class="enquire__info">
+          <p class="kicker">Buy or invest</p>
+          <h2 class="display-md" id="dev-enquiry-title" data-enquire-name>Our developments</h2>
+          <span class="chip" data-enquire-status>Now enquiring</span>
+          <dl class="enquire__facts">
+            <div><dt>Homes</dt><dd data-enquire-homes>Townhouses and new homes</dd></div>
+            <div><dt>Location</dt><dd data-enquire-where>Adelaide, SA</dd></div>
+          </dl>
+          <p class="caption">Ask about availability, floor plans, pricing or timing. Khush or Vivek will reply within one business day.</p>
+        </div>
+      </aside>
+      <div class="enquire__main">
+        <form class="form" action="../send.php" method="post" novalidate data-enquiry data-m>
+          <input type="hidden" name="form" value="development">
+          <div class="field field--select"><select id="d-project" name="project" required data-enquire-select>
+                <option value="">Choose a development</option>
+                <option value="Glenunga Residences" data-status="In planning" data-homes="4 two-storey homes" data-where="Glenunga, SA 5064" data-img="../assets/img/projects/glenunga-render.webp">Glenunga Residences</option>
+                <option value="Holden Hill Homes" data-status="Starts soon" data-homes="2 single-storey homes" data-where="Holden Hill, SA 5088" data-img="../assets/img/projects/holden-hill-render.webp">Holden Hill Homes</option>
+                <option value="Enfield Homes" data-status="Construction started" data-homes="2 single-storey homes" data-where="Enfield, SA 5085" data-img="../assets/img/projects/enfield-render.webp">Enfield Homes</option>
+                <option value="Salisbury Downs Homes" data-status="Construction started" data-homes="3 single-storey homes" data-where="Salisbury Downs, SA 5108" data-img="../assets/img/projects/salisbury-downs-render.webp">Salisbury Downs Homes</option>
+                <option value="Marion Homes" data-status="Starts soon" data-homes="2 single-storey homes" data-where="Marion, SA 5043" data-img="../assets/img/projects/marion-render.webp">Marion Homes</option>
+                <option value="Parafield Gardens Homes" data-status="Planning granted" data-homes="2 single-storey homes" data-where="Parafield Gardens, SA 5107" data-img="../assets/img/projects/parafield-gardens-render.jpg">Parafield Gardens Homes</option>
+                <option value="Davoren Park Townhouses" data-status="Approved" data-homes="4 two-storey townhouses" data-where="Davoren Park, SA" data-img="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=70">Davoren Park Townhouses</option>
+                <option value="Ingle Farm Homes" data-status="Complete" data-homes="2 single-storey homes" data-where="Ingle Farm, SA 5093" data-img="../assets/img/projects/ingle-farm-exterior.jpg">Ingle Farm Homes</option>
+                <option value="Upcoming developments" data-status="Coming soon" data-homes="New releases" data-where="Adelaide, SA" data-img="">Any upcoming development</option>
+              </select><label for="d-project">Development *</label><span class="field__err">Please choose a development.</span></div>
+          <div class="form__row">
+            <div class="field"><input id="d-name" name="name" type="text" placeholder=" " autocomplete="name" required><label for="d-name">Your name *</label><span class="field__err">Please add your name.</span></div>
+            <div class="field"><input id="d-email" name="email" type="email" placeholder=" " autocomplete="email" required><label for="d-email">Email *</label><span class="field__err">Please add a valid email.</span></div>
+          </div>
+          <div class="form__row">
+            <div class="field"><input id="d-phone" name="phone" type="tel" placeholder=" " autocomplete="tel" required><label for="d-phone">Phone *</label><span class="field__err">Please add a phone number.</span></div>
+            <div class="field field--select"><select id="d-buyer" name="buyer"><option value="">Choose one</option><option>Home buyer</option><option>First home buyer</option><option>Investor</option><option>Agent or buyer's advocate</option><option>Other</option></select><label for="d-buyer">I am a</label></div>
+          </div>
+          <div class="choice-group">
+            <span class="label">I'd like to know about</span>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="ask" value="Availability"><span>Availability</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Pricing"><span>Pricing</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Floor plans"><span>Floor plans</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Inclusions"><span>Inclusions</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Completion date"><span>Completion date</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="An inspection"><span>An inspection</span></label>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field field--select"><select id="d-finance" name="finance"><option value="">Choose one</option><option>Pre-approved</option><option>Arranging finance</option><option>Cash buyer</option><option>Not yet</option></select><label for="d-finance">Finance</label></div>
+            <div class="field field--select"><select id="d-timeframe" name="timeframe"><option value="">Choose one</option><option>Ready now</option><option>Within 3 months</option><option>3 to 6 months</option><option>6 to 12 months</option><option>Just looking</option></select><label for="d-timeframe">When you'd like to buy</label></div>
+          </div>
+          <div class="field"><textarea id="d-msg" name="message" placeholder=" " rows="3"></textarea><label for="d-msg">Questions or notes</label></div>
+          <div class="hcheck" data-hcheck>
+            <button class="hcheck__box" type="button" role="checkbox" aria-checked="false" aria-labelledby="hc-dev"><span class="hcheck__spin"></span><svg class="hcheck__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+            <span class="hcheck__text" id="hc-dev">I'm not a robot</span>
+            <span class="hcheck__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 22L24 6l18 16v20H6z"/><rect x="20" y="29" width="8" height="13"/></svg>Human check</span>
+            <input type="hidden" name="hc_t"><input type="hidden" name="hc_s">
+            <span class="field__err">Please confirm you're not a robot.</span>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave this empty <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+          <div class="form__foot">
+            <p class="caption form__status" role="status">Goes straight to admin@hillsandharbour.com.au</p>
+            <button class="btn btn--solid" type="submit"><span class="btn__label">Send enquiry</span> <span class="arrow">→</span></button>
+          </div>
+        </form>
+        <div class="form-success" tabindex="-1">
+          <span class="chip chip--granted" style="width:fit-content">✓ Enquiry sent</span>
+          <h3 class="display-md">Thanks. It's with us.</h3>
+          <p class="muted">We'll be in touch within one business day with the details you asked for.</p>
+          <button class="link-arrow" type="button" data-modal-close style="width:fit-content">Close <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer" data-header="dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__lead">Land. Build. Handover.</p>
+        <p class="caption mt-s">Project management and development. Adelaide, South Australia.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../custom-houses.html">Custom Houses</a></li>
+          <li><a href="../development-projects.html">Development Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+61415386318">Khush · 0415 386 318</a></li>
+          <li><a href="tel:+61406437761">Vivek · 0406 437 761</a></li>
+          <li><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></li>
+          <li class="caption">Adelaide, SA · <span data-clock></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__giant" aria-hidden="true"><img src="../assets/img/hh-logo-white.png" alt="" loading="lazy"></div>
+    <div class="footer__bar">
+      <span>Hills &amp; Harbour | Website | <span data-year>2026</span></span>
+      <span>Adelaide, South Australia</span>
+      <a href="#" class="to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
