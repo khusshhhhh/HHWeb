@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hills & Harbour · Project management and development, Adelaide</title>
+<meta name="description" content="Hills & Harbour is an Adelaide project management and development company. From finding the land to handing over the keys, one team manages the whole build.">
+<meta name="theme-color" content="#141414">
+<meta property="og:title" content="Hills & Harbour · Project management and development, Adelaide">
+<meta property="og:description" content="Hills & Harbour is an Adelaide project management and development company. From finding the land to handing over the keys, one team manages the whole build.">
+<meta property="og:image" content="https://hillsandharbour.com.au/assets/img/hh-logo-black.png">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function (r) {
+    try {
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!sessionStorage.getItem('hh-loaded') && !calm) r.classList.add('is-loading');
+      if (sessionStorage.getItem('hh-pt')) { r.classList.add('pt-in'); sessionStorage.removeItem('hh-pt'); }
+    } catch (e) {}
+    setTimeout(function () { r.classList.remove('is-loading', 'pt-in'); }, 6000);
+  })(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <img class="reveal-a" src="assets/img/hh-logo-white.png" alt="">
+    <img class="reveal-b" src="assets/img/hh-logo-white.png" alt="">
+  </div>
+  <div class="loader__meta">
+    <span>Adelaide, South Australia</span>
+    <span class="loader__count">000</span>
+    <span>Project management</span>
+  </div>
+  <div class="loader__bar"></div>
+</div>
+<div class="pt" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt=""></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"><span></span></div></div>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a class="brand-logo" href="index.html" aria-label="Hills &amp; Harbour, home">
+      <img class="logo-white" src="assets/img/hh-logo-white.png" alt="" width="128" height="49">
+      <img class="logo-black" src="assets/img/hh-logo-black.png" alt="" width="128" height="49">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="projects/index.html" data-nav="projects"><span>Projects</span></a></li>
+        <li class="nav__item--drop">
+          <a class="nav__link" href="index.html#services" data-nav="services" aria-haspopup="true"><span>Services</span>
+            <svg class="nav__caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="custom-houses.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">01 · Service</span>
+              <span class="dropdown__title">Custom Houses</span>
+              <span class="dropdown__desc">One home, planned around your block and your brief.</span>
+            </a>
+            <a href="development-projects.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">02 · Service</span>
+              <span class="dropdown__title">Development Projects</span>
+              <span class="dropdown__desc">Land, subdivision and multiple dwellings, run as one project.</span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="about.html" data-nav="about"><span>About</span></a></li>
+        <li><a class="nav__link" href="contact.html" data-nav="contact"><span>Contact</span></a></li>
+      </ul>
+      <a class="btn btn--green" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-menu__list">
+    <li><a href="index.html" data-nav="home" aria-current="page">Home <small>00</small></a></li>
+    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
+    <li class="sub"><a href="custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
+    <li class="sub"><a href="development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
+    <li><a href="about.html" data-nav="about">About <small>04</small></a></li>
+    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
+  </ul>
+  <div class="mobile-menu__foot">
+    <span class="label">Talk to us</span>
+    <a href="tel:+61415386318">Khush Patel · 0415 386 318</a>
+    <a href="tel:+61406437761">Vivek Virani · 0406 437 761</a>
+    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero band--black grid-bg" data-header="dark">
+  <svg class="hero__hills" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 320 C120 260 240 200 380 240 S 620 140 760 190 S 940 250 1000 230"/>
+    <path d="M0 360 C150 300 260 250 400 290 S 650 200 780 240 S 950 300 1000 280"/>
+    <path d="M0 392 C180 340 300 310 460 330 S 700 270 820 300 S 960 340 1000 330"/>
+  </svg>
+  <div class="container">
+    <div class="hero__meta" data-reveal="fade">
+      <span><span class="live-dot"></span>Adelaide, South Australia</span>
+      <span>34.93° S · 138.60° E</span>
+      <span data-clock>Adelaide</span>
+    </div>
+  </div>
+  <div class="hero__stage" data-stage-cycle aria-hidden="true">
+    <div class="hero__stage-inner" data-reveal style="--d:300ms">
+    <div class="hero__stage-frame">
+      <img class="is-active" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=72" alt="">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=72" alt="">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=72" alt="">
+    </div>
+    <div class="hero__stage-bars"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+    <div class="hero__stage-label"><span data-stage-label>01 · Land</span><span class="caption">Indicative imagery</span></div>
+    </div>
+  </div>
+  <div class="container hero__title">
+    <h1 class="display-xxl hero__h1" data-split><span data-stage-word>Land.</span><br><span data-stage-word>Build.</span><br><span data-stage-word>Handover.</span></h1>
+  </div>
+  <div class="container">
+    <div class="hero__foot hero__foot--simple">
+      <div class="btn-row" data-reveal style="--d:500ms">
+        <a class="btn btn--invert" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+        <a class="btn" href="projects/index.html">View projects</a>
+      </div>
+      <a class="scroll-cue" href="#window" data-reveal="fade" style="--d:900ms"><span class="scroll-cue__line"></span>Scroll</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPANDING WINDOW ============ -->
+<section class="expand" id="window" data-header="dark" aria-label="Right block, right build">
+  <div class="expand__frame">
+    <img src="assets/img/projects/colonial-elevation.webp" alt="A two-storey rendered home with a colonial facade, tall arched window and black-framed glazing">
+    <div class="expand__shade"></div>
+  </div>
+  <div class="expand__ground" aria-hidden="true"></div>
+  <div class="expand__plot" aria-hidden="true">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x="0" y="0" width="100" height="100" pathLength="1"/></svg>
+    <span class="expand__peg" style="left:0;top:0"></span><span class="expand__peg" style="right:0;top:0"></span>
+    <span class="expand__peg" style="left:0;bottom:0"></span><span class="expand__peg" style="right:0;bottom:0"></span>
+    <div class="expand__dim"><span>Frontage</span></div>
+    <span class="expand__tag expand__tag--lot">Lot 01</span>
+    <span class="expand__tag expand__tag--stage">Stage · <b data-expand-stage>Site</b></span>
+  </div>
+  <p class="expand__words" aria-hidden="true">Right <span class="expand__roll"><span class="expand__roll-inner"><span>block.</span><span>build.</span></span></span></p>
+  <div class="expand__copy">
+    <div>
+      <p class="kicker">One team, start to finish</p>
+      <p class="display-md mt-s" style="max-width:16ch">Every step, managed by the same two people.</p>
+    </div>
+    <span class="caption" style="color:#bdbdbd">Indicative imagery</span>
+  </div>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="statement-wrap">
+      <div class="statement-side">
+        <p class="kicker">Hills &amp; Harbour</p>
+        <p class="caption">Project management and development. Adelaide, South Australia.</p>
+      </div>
+      <p class="statement" data-fill>We are an Adelaide project management and development company. One team manages your project from the first site visit to the final inspection.</p>
+    </div>
+    <div class="statement-foot">
+      <div data-reveal><h3>One point of contact.</h3><p class="muted">From the first site visit to the final inspection, you deal with the same two people.</p></div>
+      <div data-reveal style="--d:120ms"><h3>Facts, shown plainly.</h3><p class="muted">Real figures, real dates, named sources. Every report we send is one you can check.</p></div>
+      <div data-reveal style="--d:240ms"><h3>Every consent tracked.</h3><p class="muted">Planning, land division and building approvals, logged step by step until they're granted.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="band band--white" id="services" data-header="light" style="padding-top:0">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">What we do</p>
+      <h2 class="display-md" data-split>Four services. One team.</h2>
+      <p class="lead muted" data-reveal>Use one, or hand us the whole journey. Each service feeds the next, so nothing falls between consultants.</p>
+    </div>
+    <div class="services-list">
+      <a class="service-row" href="development-projects.html" data-hover-img="0" data-cursor="Explore">
+        <span class="service-row__num">01</span>
+        <span class="service-row__title">Land Acquisition</span>
+        <span class="service-row__desc">We find and assess the block: zoning, overlays, services, slope and what it will really cost to build.</span>
+        <span class="service-row__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 10h36M6 7v6M42 7v6"/><rect x="6" y="18" width="36" height="24"/></svg></span>
+      </a>
+      <a class="service-row" href="development-projects.html" data-hover-img="1" data-cursor="Explore">
+        <span class="service-row__num">02</span>
+        <span class="service-row__title">Subdivision</span>
+        <span class="service-row__desc">Land division from concept plan to new titles, with surveyors, engineers and council coordinated by us.</span>
+        <span class="service-row__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36"/><path d="M24 6v36M6 24h18" stroke-dasharray="4 4"/></svg></span>
+      </a>
+      <a class="service-row" href="custom-houses.html" data-hover-img="2" data-cursor="Explore">
+        <span class="service-row__num">03</span>
+        <span class="service-row__title">Project Management</span>
+        <span class="service-row__desc">Design, approvals, contracts and the build, on one schedule, with weekly reports you can actually read.</span>
+        <span class="service-row__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 18L24 6l20 12z"/><path d="M9 18v20M17 18v20M24 18v20M31 18v20M39 18v20M4 41h40"/></svg></span>
+      </a>
+      <a class="service-row" href="custom-houses.html" data-hover-img="3" data-cursor="Explore">
+        <span class="service-row__num">04</span>
+        <span class="service-row__title">Residential Buildings</span>
+        <span class="service-row__desc">New homes, townhouses and small multi-dwelling projects, delivered through to handover.</span>
+        <span class="service-row__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 22L24 6l18 16v20H6z"/><rect class="fill-green" x="14" y="29" width="8" height="13"/><rect x="29" y="25" width="6" height="6"/></svg></span>
+      </a>
+    </div>
+  </div>
+  <div class="hover-reveal" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=72" alt="">
+    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=700&q=72" alt="">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=72" alt="">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=700&q=72" alt="">
+  </div>
+</section>
+
+<!-- ============ BUILD SEQUENCE ============ -->
+<section class="build band--black grid-bg" data-header="dark" aria-labelledby="build-title">
+  <div class="container">
+    <div class="build__inner">
+      <div>
+        <p class="kicker">How it works</p>
+        <h2 id="build-title" class="display-lg mt-s">Six stages of build.</h2>
+        <ol class="build__stages">
+          <li class="build__stage is-active"><span class="n">01</span><h3>Land</h3><p>We find and assess the block: zoning, overlays, services, slope and the true cost to build.</p></li>
+          <li class="build__stage"><span class="n">02</span><h3>Slab</h3><p>Site set-out, footings and the slab poured to the engineer's design, inspected before anything goes on top.</p></li>
+          <li class="build__stage"><span class="n">03</span><h3>Framing</h3><p>Wall frames, floor and roof trusses go up, checked against the plans at each stage.</p></li>
+          <li class="build__stage"><span class="n">04</span><h3>Internal Works</h3><p>Plumbing, electrical, insulation, plaster, cabinetry and finishes, with weekly site reports and photos.</p></li>
+          <li class="build__stage"><span class="n">05</span><h3>External Works</h3><p>Cladding, roofing, windows, driveway, fencing and landscaping close the home in.</p></li>
+          <li class="build__stage"><span class="n">06</span><h3>Handover</h3><p>Defects inspected, certificates collected, keys handed over. We stay on call through the maintenance period.</p></li>
+        </ol>
+      </div>
+      <div class="build__drawing" aria-hidden="true">
+        <div class="build__counter"><b>01</b>/06</div>
+        <svg viewBox="0 0 720 480">
+          <!-- 01 Land: ground, hills, survey tripod, boundary pegs -->
+          <g class="s1">
+            <path class="ln ln--thin" pathLength="1" d="M20 400 C120 360 200 330 300 352 S 480 300 560 332 S 680 362 700 352"/>
+            <path class="ln" pathLength="1" d="M20 400 H700"/>
+            <path class="ln ln--thin" pathLength="1" d="M58 400 L68 366 L78 400 M68 366 V400"/>
+            <rect class="ln ln--thin" pathLength="1" x="61" y="356" width="14" height="10"/>
+            <path class="ln ln--dash" pathLength="1" d="M75 361 L120 368 M136 369 L600 369"/>
+            <path class="ln ln--green" pathLength="1" d="M120 400 V362 h16 l-5 6 5 6 h-16"/>
+            <path class="ln ln--green" pathLength="1" d="M600 400 V362 h16 l-5 6 5 6 h-16"/>
+            <path class="ln ln--dash" pathLength="1" d="M120 430 H600 M120 424 v12 M600 424 v12"/>
+          </g>
+          <!-- 02 Slab: footings, formwork, slab, reinforcement -->
+          <g class="s2">
+            <path class="ln ln--thin" pathLength="1" d="M170 400V444h20V400M300 400V444h20V400M430 400V444h20V400M540 400V444h20V400"/>
+            <path class="ln ln--thin" pathLength="1" d="M144 400V382M576 400V382"/>
+            <rect class="ln" pathLength="1" x="150" y="388" width="420" height="12"/>
+            <path class="ln ln--dash" pathLength="1" d="M156 394 H564"/>
+          </g>
+          <!-- 03 Framing: wall frames, floor, noggings, roof trusses -->
+          <g class="s3">
+            <path class="ln ln--thin" pathLength="1" d="M160 388V316M185 388V316M210 388V316M235 388V316M260 388V316M285 388V316M310 388V316M335 388V316M360 388V316M385 388V316M410 388V316M435 388V316M460 388V316M485 388V316M510 388V316M535 388V316M560 388V316"/>
+            <rect class="ln" pathLength="1" x="150" y="310" width="420" height="6"/>
+            <path class="ln ln--thin" pathLength="1" d="M160 310V240M185 310V240M210 310V240M235 310V240M260 310V240M285 310V240M310 310V240M335 310V240M360 310V240M385 310V240M410 310V240M435 310V240M460 310V240M485 310V240M510 310V240M535 310V240M560 310V240"/>
+            <path class="ln ln--thin" pathLength="1" d="M150 352 H570 M150 275 H570"/>
+            <path class="ln" pathLength="1" d="M150 240 H570"/>
+            <path class="ln" pathLength="1" d="M120 244 L360 148 L600 244"/>
+            <path class="ln ln--thin" pathLength="1" d="M190 240V216M240 240V196M290 240V176M330 240V160M360 240V150M390 240V160M430 240V176M480 240V196M530 240V216"/>
+            <path class="ln ln--thin" pathLength="1" d="M190 240L240 196L290 240L330 160L360 240L390 160L430 240L480 196L530 240"/>
+          </g>
+          <!-- 04 Internal works: services, insulation, stair, kitchen, lights, bedroom, robe -->
+          <g class="s4">
+            <path class="ln ln--dash" pathLength="1" d="M160 302 H560 M520 388 V244"/>
+            <path class="ln ln--thin" pathLength="1" d="M160 250 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6 l8 -6 8 6"/>
+            <path class="ln" pathLength="1" d="M430 388 V376 H444 V364 H458 V352 H472 V340 H486 V328 H500 V316"/>
+            <rect class="ln" pathLength="1" x="176" y="362" width="104" height="26"/>
+            <path class="ln ln--thin" pathLength="1" d="M300 388V370M290 370H310M330 388V370M320 370H340"/>
+            <path class="ln ln--thin" pathLength="1" d="M212 316V338M246 316V338"/>
+            <circle class="ln" pathLength="1" cx="212" cy="343" r="5"/>
+            <circle class="ln" pathLength="1" cx="246" cy="343" r="5"/>
+            <rect class="ln" pathLength="1" x="186" y="290" width="104" height="20"/>
+            <path class="ln ln--thin" pathLength="1" d="M186 290V272M192 290V284H214V290"/>
+            <rect class="ln ln--thin" pathLength="1" x="334" y="252" width="56" height="58"/>
+            <path class="ln ln--thin" pathLength="1" d="M362 252V310"/>
+          </g>
+          <!-- 05 External works: roof sheeting, cladding, windows, door, path, fences, planting -->
+          <g class="s5">
+            <rect class="fill-black" x="150" y="240" width="420" height="148"/>
+            <polygon class="fill-black" points="116,246 360,146 604,246"/>
+            <path class="ln" pathLength="1" d="M120 244 L360 148 L600 244 M114 248 H606"/>
+            <path class="ln ln--thin" pathLength="1" d="M150 244V232M170 244V224M190 244V216M210 244V208M230 244V200M250 244V192M270 244V184M290 244V176M310 244V168M330 244V160M350 244V152M370 244V152M390 244V160M410 244V168M430 244V176M450 244V184M470 244V192M490 244V200M510 244V208M530 244V216M550 244V224M570 244V232"/>
+            <rect class="ln" pathLength="1" x="150" y="240" width="420" height="148"/>
+            <path class="ln ln--thin" pathLength="1" d="M150 256H570M150 272H570M150 288H570M150 304H570"/>
+            <rect class="fill-black" x="190" y="262" width="62" height="34"/>
+            <rect class="fill-black" x="330" y="262" width="62" height="34"/>
+            <rect class="fill-black" x="468" y="262" width="62" height="34"/>
+            <rect class="ln" pathLength="1" x="190" y="262" width="62" height="34"/>
+            <rect class="ln" pathLength="1" x="330" y="262" width="62" height="34"/>
+            <rect class="ln" pathLength="1" x="468" y="262" width="62" height="34"/>
+            <rect class="ln" pathLength="1" x="300" y="330" width="170" height="58"/>
+            <path class="ln ln--thin" pathLength="1" d="M385 330V388"/>
+            <rect class="ln" pathLength="1" x="196" y="332" width="42" height="56"/>
+            <path class="ln ln--thin" pathLength="1" d="M206 400 L190 470 M228 400 L244 470"/>
+            <path class="ln ln--thin" pathLength="1" d="M20 404 H120 M30 404V392M50 404V392M70 404V392M90 404V392M110 404V392M600 404 H700 M620 404V392M640 404V392M680 404V392"/>
+            <path class="ln ln--thin" pathLength="1" d="M470 400 a14 14 0 0 1 28 0 M502 400 a10 10 0 0 1 20 0 M258 400 a10 10 0 0 1 20 0"/>
+            <path class="ln ln--thin" pathLength="1" d="M660 400 V344 M660 316 m-28 0 a28 28 0 1 0 56 0 a28 28 0 1 0 -56 0"/>
+          </g>
+          <!-- 06 Handover: green door, lights on, letterbox, sign-off tick -->
+          <g class="s6">
+            <rect class="fill-green" x="196" y="332" width="42" height="56"/>
+            <rect class="fill-lit" x="191" y="263" width="60" height="32"/>
+            <rect class="fill-lit" x="331" y="263" width="60" height="32"/>
+            <rect class="fill-lit" x="469" y="263" width="60" height="32"/>
+            <rect class="fill-lit" x="301" y="331" width="168" height="56"/>
+            <path class="ln ln--thin" pathLength="1" d="M140 400V386M134 386h12v-12h-12z"/>
+            <circle class="ln ln--green" pathLength="1" cx="70" cy="190" r="30"/>
+            <path class="ln ln--green" pathLength="1" d="M56 191 l10 10 l20 -22"/>
+          </g>
+        </svg>
+        <div class="build__progress"><span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECT ============ -->
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">Featured project</p>
+      <h2 class="display-lg" data-split>Four homes. One shared drive.</h2>
+      <p class="lead muted" data-reveal>Glenunga Residences: four two-storey homes on four lots at 593 Portrush Road. Three bedrooms each, every one with an ensuite.</p>
+    </div>
+    <div class="feature">
+      <a class="feature__media mask-img" href="projects/glenunga.html" data-zoom data-cursor="View">
+        <div class="drawing-panel">
+            <svg viewBox="0 0 800 400" role="img" aria-label="Schematic site plan: four homes on four lots along a shared driveway off Portrush Road">
+              <path class="dl dl--thin" pathLength="1" d="M50 34H744M50 28v12M744 28v12"/>
+              <text class="dt" x="397" y="22" text-anchor="middle">72.24 m</text>
+              <path class="dl dl--thin" pathLength="1" d="M30 60V353M24 60h12M24 353h12"/>
+              <text class="dt" x="16" y="206" text-anchor="middle" transform="rotate(-90 16 206)">30.48 m</text>
+              <rect class="dl dl--green" pathLength="1" x="50" y="60" width="694" height="293"/>
+              <path class="dl" pathLength="1" d="M205 60V353M365 60V295M526 60V295M205 295H687V223H744"/>
+              <rect class="dl dl--thin bld" pathLength="1" x="88" y="117" width="109" height="211"/>
+              <rect class="dl dl--thin bld" pathLength="1" x="219" y="98" width="141" height="145"/>
+              <rect class="dl dl--thin bld" pathLength="1" x="370" y="98" width="142" height="145"/>
+              <rect class="dl dl--thin bld" pathLength="1" x="532" y="98" width="140" height="162"/>
+              <text class="dt dt--b" x="142" y="214" text-anchor="middle">RES 4</text><text class="dt" x="142" y="232" text-anchor="middle">487 m²</text>
+              <text class="dt dt--b" x="289" y="168" text-anchor="middle">RES 3</text><text class="dt" x="289" y="186" text-anchor="middle">400 m²</text>
+              <text class="dt dt--b" x="441" y="168" text-anchor="middle">RES 2</text><text class="dt" x="441" y="186" text-anchor="middle">410 m²</text>
+              <text class="dt dt--b" x="602" y="177" text-anchor="middle">RES 1</text><text class="dt" x="602" y="195" text-anchor="middle">511 m²</text>
+              <path class="dl dl--thin" pathLength="1" d="M215 324H730" stroke-dasharray="6 6"/>
+              <text class="dt" x="470" y="345" text-anchor="middle">SHARED DRIVEWAY</text>
+              <path class="dl dl--thin" pathLength="1" d="M766 16V384"/>
+              <text class="dt" x="784" y="206" text-anchor="middle" transform="rotate(90 784 206)">PORTRUSH RD</text>
+              <rect class="fill-green" x="734" y="319" width="10" height="10"/>
+            </svg>
+        </div>
+        <div class="stamp" aria-label="Planning in progress">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="stamp-circle-1" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+            <circle cx="100" cy="100" r="96"/>
+            <circle cx="100" cy="100" r="58"/>
+            <g class="stamp__ring"><text><textPath href="#stamp-circle-1">PLANNING APPROVAL · IN PROGRESS · PLANNING APPROVAL · IN PROGRESS ·</textPath></text></g>
+            <path class="tick" d="M76 104 L100 80 L124 104 M84 96 V122 H116 V96"/>
+          </svg>
+        </div>
+      </a>
+      <div class="feature__stats">
+        <div class="stat-grid">
+          <div class="stat" data-reveal><div class="stat-num"><span data-count="4">4</span></div><div class="stat-label">Homes</div><div class="stat-note">Two storeys each</div></div>
+          <div class="stat" data-reveal style="--d:120ms"><div class="stat-num"><span data-count="1808">1,808</span><small>m²</small></div><div class="stat-label">Land</div><div class="stat-note">Across four lots</div></div>
+          <div class="stat stat--hl" data-reveal style="--d:240ms"><div class="stat-num"><span data-count="1331">1,331</span><small>m²</small></div><div class="stat-label">Floor area</div><div class="stat-note">Four homes, incl. garages</div></div>
+        </div>
+      </div>
+      <div class="feature__head mt-s">
+        <div class="chips" data-reveal>
+          <span class="chip chip--dark">In planning</span>
+          <span class="chip">Development</span>
+        </div>
+        <p class="body-copy muted" data-reveal>Planning drawings were issued for approval on 30 September 2026. Every home has a double garage and an alfresco, and three of the four have a balcony.</p>
+      </div>
+      <div class="feature__side mt-s" data-reveal>
+        <a class="link-arrow" href="projects/glenunga.html">View the project <span class="arrow">→</span></a>
+        <a class="link-arrow" href="projects/index.html">All projects <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO PATHS ============ -->
+<section class="band--black" data-header="dark" aria-label="Services">
+  <div class="paths">
+    <a class="path" href="custom-houses.html" data-cursor="Explore">
+      <div class="path__bg"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1400&q=72" alt="" loading="lazy"></div>
+      <div class="path__top"><span>01</span><span>Service</span></div>
+      <div class="path__body">
+        <h2 class="path__title">Custom<br>Houses</h2>
+        <p>For owners building one new home. We assess the land, coordinate design and approvals, and manage the build to handover.</p>
+        <span class="link-arrow">Explore custom houses <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="path" href="development-projects.html" data-cursor="Explore">
+      <div class="path__bg"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=72" alt="" loading="lazy"></div>
+      <div class="path__top"><span>02</span><span>Service</span></div>
+      <div class="path__body">
+        <h2 class="path__title">Development<br>Projects</h2>
+        <p>For landowners and investors. Feasibility, subdivision, approvals and the build of multiple dwellings, managed as one project.</p>
+        <span class="link-arrow">Explore development <span class="arrow">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="band band--black cta" data-header="dark" aria-labelledby="cta-title">
+  <div class="container">
+    <p class="kicker" data-reveal>Start a project</p>
+    <h2 id="cta-title" class="visually-hidden">Let's build something together.</h2>
+  </div>
+  <div class="marquee mt-m" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Let's build something together. <i></i></span>
+      <span class="marquee__item">Let's build something together. <i></i></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cta__row">
+      <div class="cta__contacts">
+        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
+      </div>
+      <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" data-header="dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__lead">Land. Build. Handover.</p>
+        <p class="caption mt-s">Project management and development. Adelaide, South Australia.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="custom-houses.html">Custom Houses</a></li>
+          <li><a href="development-projects.html">Development Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+61415386318">Khush · 0415 386 318</a></li>
+          <li><a href="tel:+61406437761">Vivek · 0406 437 761</a></li>
+          <li><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></li>
+          <li class="caption">Adelaide, SA · <span data-clock></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__giant" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt="" loading="lazy"></div>
+    <div class="footer__bar">
+      <span>Hills &amp; Harbour | Website | <span data-year>2026</span></span>
+      <span>Adelaide, South Australia</span>
+      <a href="#" class="to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

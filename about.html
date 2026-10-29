@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Hills & Harbour</title>
+<meta name="description" content="Hills & Harbour was founded by Khush Patel and Vivek Virani to take Adelaide homes from land to handover with one team and one schedule.">
+<meta name="theme-color" content="#141414">
+<meta property="og:title" content="About · Hills & Harbour">
+<meta property="og:description" content="Hills & Harbour was founded by Khush Patel and Vivek Virani to take Adelaide homes from land to handover with one team and one schedule.">
+<meta property="og:image" content="https://hillsandharbour.com.au/assets/img/hh-logo-black.png">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function (r) {
+    try {
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!sessionStorage.getItem('hh-loaded') && !calm) r.classList.add('is-loading');
+      if (sessionStorage.getItem('hh-pt')) { r.classList.add('pt-in'); sessionStorage.removeItem('hh-pt'); }
+    } catch (e) {}
+    setTimeout(function () { r.classList.remove('is-loading', 'pt-in'); }, 6000);
+  })(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <img class="reveal-a" src="assets/img/hh-logo-white.png" alt="">
+    <img class="reveal-b" src="assets/img/hh-logo-white.png" alt="">
+  </div>
+  <div class="loader__meta">
+    <span>Adelaide, South Australia</span>
+    <span class="loader__count">000</span>
+    <span>Project management</span>
+  </div>
+  <div class="loader__bar"></div>
+</div>
+<div class="pt" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt=""></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"><span></span></div></div>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a class="brand-logo" href="index.html" aria-label="Hills &amp; Harbour, home">
+      <img class="logo-white" src="assets/img/hh-logo-white.png" alt="" width="128" height="49">
+      <img class="logo-black" src="assets/img/hh-logo-black.png" alt="" width="128" height="49">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="projects/index.html" data-nav="projects"><span>Projects</span></a></li>
+        <li class="nav__item--drop">
+          <a class="nav__link" href="index.html#services" data-nav="services" aria-haspopup="true"><span>Services</span>
+            <svg class="nav__caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="custom-houses.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">01 · Service</span>
+              <span class="dropdown__title">Custom Houses</span>
+              <span class="dropdown__desc">One home, planned around your block and your brief.</span>
+            </a>
+            <a href="development-projects.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">02 · Service</span>
+              <span class="dropdown__title">Development Projects</span>
+              <span class="dropdown__desc">Land, subdivision and multiple dwellings, run as one project.</span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="about.html" data-nav="about" aria-current="page"><span>About</span></a></li>
+        <li><a class="nav__link" href="contact.html" data-nav="contact"><span>Contact</span></a></li>
+      </ul>
+      <a class="btn btn--green" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-menu__list">
+    <li><a href="index.html" data-nav="home">Home <small>00</small></a></li>
+    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
+    <li class="sub"><a href="custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
+    <li class="sub"><a href="development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
+    <li><a href="about.html" data-nav="about" aria-current="page">About <small>04</small></a></li>
+    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
+  </ul>
+  <div class="mobile-menu__foot">
+    <span class="label">Talk to us</span>
+    <a href="tel:+61415386318">Khush Patel · Project Manager · 0415 386 318</a>
+    <a href="tel:+61406437761">Vivek Virani · Site Coordinator · 0406 437 761</a>
+    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="page-hero band--black grid-bg" data-header="dark">
+  <span class="page-hero__index" aria-hidden="true">H&amp;H</span>
+  <div class="container">
+    <nav class="page-hero__crumbs" aria-label="Breadcrumb" data-reveal="fade"><a href="index.html">Home</a><span>/</span><span>About</span></nav>
+    <h1 class="display-xl page-hero__title" data-split>Two founders. One team.</h1>
+    <div class="page-hero__foot" data-reveal style="--d:400ms">
+      <p class="lead">Hills &amp; Harbour is an Adelaide project management and development company, founded by Khush Patel and Vivek Virani.</p>
+      <a class="btn btn--invert" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="media-band mono-img" data-parallax="10" data-header="dark">
+  <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2200&q=72" alt="Contemporary two-storey home" loading="lazy">
+  <span class="img-tag">Indicative imagery</span>
+</div>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="sticky-split">
+      <div class="sticky-split__aside">
+        <p class="kicker">Our story</p>
+        <h2 class="display-md" data-split>We keep projects moving.</h2>
+      </div>
+      <div>
+        <p class="statement" data-fill style="font-size:clamp(26px,2.8vw,42px);max-width:none">Most new homes are delayed in the gaps: between the agent and the surveyor, the designer and the council, the builder and the bank. We set up Hills &amp; Harbour to close those gaps.</p>
+        <div class="body-copy mt-m muted" data-reveal>
+          <p>We work across the whole journey: finding and assessing land, subdividing it, managing approvals and coordinating the build of new homes. One team, one schedule, one set of numbers.</p>
+          <p>The name says where we work. The hills and the harbour frame Adelaide, and every project we take on sits somewhere between them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light" style="padding-top:0">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">The co-founders</p>
+      <h2 class="display-md" data-split>The two people you'll deal with.</h2>
+      <p class="lead muted" data-reveal>No account managers in between. Call either of us directly.</p>
+    </div>
+    <div class="founders">
+      <article class="founder" data-reveal>
+        <div class="founder__mark"><span>KP</span><span class="caption">Portrait to come</span></div>
+        <div class="founder__name"><h3 class="display-sm">Khush Patel</h3><span class="founder__role">Co-founder · Project Manager</span></div>
+        <p class="muted">Khush runs the project from the first brief to handover: schedule, budget, consultants and approvals. If you want to know where your project stands, he is the person to call.</p>
+        <ul class="founder__skills"><li>Project management</li><li>Scheduling</li><li>Budgets</li><li>Approvals</li></ul>
+        <div class="founder__contact">
+          <a href="tel:+61415386318">0415 386 318</a>
+          <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+        </div>
+      </article>
+      <article class="founder" data-reveal style="--d:150ms">
+        <div class="founder__mark"><span>VV</span><span class="caption">Portrait to come</span></div>
+        <div class="founder__name"><h3 class="display-sm">Vivek Virani</h3><span class="founder__role">Co-founder · Site Coordinator</span></div>
+        <p class="muted">Vivek runs the site. He coordinates trades and deliveries, walks the site every week and checks the work against the plans before each stage is signed off.</p>
+        <ul class="founder__skills"><li>Site coordination</li><li>Trades</li><li>Inspections</li><li>Quality</li></ul>
+        <div class="founder__contact">
+          <a href="tel:+61406437761">0406 437 761</a>
+          <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--black" data-header="dark">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">How we work</p>
+      <h2 class="display-md" data-split>Four principles.</h2>
+      <p class="lead muted" data-reveal>They shape every report, schedule and conversation.</p>
+    </div>
+    <div class="principles">
+      <div class="principle" data-reveal><span class="principle__n">01</span><h3>Facts, shown plainly.</h3><p>Real figures, real dates, named sources. A number beats an adjective.</p></div>
+      <div class="principle" data-reveal style="--d:100ms"><span class="principle__n">02</span><h3>One schedule.</h3><p>Land, design, approvals and build sit on one timeline that you can see at any time.</p></div>
+      <div class="principle" data-reveal style="--d:200ms"><span class="principle__n">03</span><h3>No gaps.</h3><p>We coordinate every consultant, so nothing waits on a handover between them.</p></div>
+      <div class="principle" data-reveal style="--d:300ms"><span class="principle__n">04</span><h3>Built to hand over.</h3><p>Every decision is made with the day you get the keys in mind.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">Process</p>
+      <h2 class="display-lg" data-split>Six stages of build.</h2>
+      <p class="lead muted" data-reveal>Always in this order. We run each stage and the joins between them.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline__fill"></div>
+      <div class="tl-step"><span class="tl-step__n">01</span><h3>Land</h3><p>Site search, appraisal, zoning checks and the true cost to build.</p></div>
+      <div class="tl-step"><span class="tl-step__n">02</span><h3>Slab</h3><p>Set-out, footings and the slab, inspected before framing starts.</p></div>
+      <div class="tl-step"><span class="tl-step__n">03</span><h3>Framing</h3><p>Wall frames, floor and roof trusses, checked against the plans.</p></div>
+      <div class="tl-step"><span class="tl-step__n">04</span><h3>Internal Works</h3><p>Services, insulation, plaster, cabinetry and finishes.</p></div>
+      <div class="tl-step"><span class="tl-step__n">05</span><h3>External Works</h3><p>Cladding, roofing, windows, driveway, fencing and landscaping.</p></div>
+      <div class="tl-step"><span class="tl-step__n">06</span><h3>Handover</h3><p>Defects fixed, certificates collected, keys handed over.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--black" data-header="dark">
+  <div class="container">
+    <div class="split-2">
+      <div class="section-head" style="margin:0">
+        <p class="kicker">Where we work</p>
+        <h2 class="display-lg" data-split>Adelaide, South Australia.</h2>
+        <p class="lead muted" data-reveal>Based in Broadview, in Adelaide's inner north, between the hills and the harbour. Have a site in mind? Send us the address and we'll take a look.</p>
+        <div data-reveal><a class="link-arrow" href="contact.html">Send us a site <span class="arrow">→</span></a></div>
+      </div>
+      <div class="dotmap" aria-label="Dot map of metropolitan Adelaide with Broadview marked in green" role="img">
+        <canvas></canvas>
+        <div class="dotmap__pin" data-lon="138.6145" data-lat="-34.8765">Broadview<small>Adelaide, SA</small></div>
+        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.6005" data-lat="-34.948">Adelaide CBD</div>
+        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.43" data-lat="-34.93">Gulf St Vincent</div>
+        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.705" data-lat="-34.955">Adelaide Hills</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--black cta" data-header="dark" aria-labelledby="cta-title">
+  <div class="container">
+    <p class="kicker" data-reveal>Start a project</p>
+    <h2 id="cta-title" class="visually-hidden">Let's build something together.</h2>
+  </div>
+  <div class="marquee mt-m" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Let's build something together. <i></i></span>
+      <span class="marquee__item">Let's build something together. <i></i></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cta__row">
+      <div class="cta__contacts">
+        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
+      </div>
+      <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" data-header="dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__lead">Land. Build. Handover.</p>
+        <p class="caption mt-s">Project management and development. Adelaide, South Australia.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="custom-houses.html">Custom Houses</a></li>
+          <li><a href="development-projects.html">Development Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+61415386318">Khush · 0415 386 318</a></li>
+          <li><a href="tel:+61406437761">Vivek · 0406 437 761</a></li>
+          <li><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></li>
+          <li class="caption">Adelaide, SA · <span data-clock></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__giant" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt="" loading="lazy"></div>
+    <div class="footer__bar">
+      <span>Hills &amp; Harbour | Website | <span data-year>2026</span></span>
+      <span>Adelaide, South Australia</span>
+      <a href="#" class="to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

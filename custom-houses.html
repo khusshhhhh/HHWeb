@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Houses · Hills & Harbour</title>
+<meta name="description" content="Building one new home in Adelaide? Hills & Harbour assesses the land, coordinates design and approvals, and manages the build through to handover.">
+<meta name="theme-color" content="#141414">
+<meta property="og:title" content="Custom Houses · Hills & Harbour">
+<meta property="og:description" content="Building one new home in Adelaide? Hills & Harbour assesses the land, coordinates design and approvals, and manages the build through to handover.">
+<meta property="og:image" content="https://hillsandharbour.com.au/assets/img/hh-logo-black.png">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function (r) {
+    try {
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!sessionStorage.getItem('hh-loaded') && !calm) r.classList.add('is-loading');
+      if (sessionStorage.getItem('hh-pt')) { r.classList.add('pt-in'); sessionStorage.removeItem('hh-pt'); }
+    } catch (e) {}
+    setTimeout(function () { r.classList.remove('is-loading', 'pt-in'); }, 6000);
+  })(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <img class="reveal-a" src="assets/img/hh-logo-white.png" alt="">
+    <img class="reveal-b" src="assets/img/hh-logo-white.png" alt="">
+  </div>
+  <div class="loader__meta">
+    <span>Adelaide, South Australia</span>
+    <span class="loader__count">000</span>
+    <span>Project management</span>
+  </div>
+  <div class="loader__bar"></div>
+</div>
+<div class="pt" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt=""></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"><span></span></div></div>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a class="brand-logo" href="index.html" aria-label="Hills &amp; Harbour, home">
+      <img class="logo-white" src="assets/img/hh-logo-white.png" alt="" width="128" height="49">
+      <img class="logo-black" src="assets/img/hh-logo-black.png" alt="" width="128" height="49">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="projects/index.html" data-nav="projects"><span>Projects</span></a></li>
+        <li class="nav__item--drop">
+          <a class="nav__link" href="index.html#services" data-nav="services" aria-current="page" aria-haspopup="true"><span>Services</span>
+            <svg class="nav__caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="custom-houses.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">01 · Service</span>
+              <span class="dropdown__title">Custom Houses</span>
+              <span class="dropdown__desc">One home, planned around your block and your brief.</span>
+            </a>
+            <a href="development-projects.html">
+              <div class="dropdown__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=560&q=72" alt="" loading="lazy"></div>
+              <span class="dropdown__num">02 · Service</span>
+              <span class="dropdown__title">Development Projects</span>
+              <span class="dropdown__desc">Land, subdivision and multiple dwellings, run as one project.</span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="about.html" data-nav="about"><span>About</span></a></li>
+        <li><a class="nav__link" href="contact.html" data-nav="contact"><span>Contact</span></a></li>
+      </ul>
+      <a class="btn btn--green" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-menu__list">
+    <li><a href="index.html" data-nav="home">Home <small>00</small></a></li>
+    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
+    <li class="sub"><a href="custom-houses.html" data-nav="custom" aria-current="page">Custom Houses <small>02</small></a></li>
+    <li class="sub"><a href="development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
+    <li><a href="about.html" data-nav="about">About <small>04</small></a></li>
+    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
+  </ul>
+  <div class="mobile-menu__foot">
+    <span class="label">Talk to us</span>
+    <a href="tel:+61415386318">Khush Patel · Project Manager · 0415 386 318</a>
+    <a href="tel:+61406437761">Vivek Virani · Site Coordinator · 0406 437 761</a>
+    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="page-hero band--white grid-bg" data-header="light">
+  <span class="page-hero__index" aria-hidden="true">01</span>
+  <div class="container">
+    <nav class="page-hero__crumbs" aria-label="Breadcrumb" data-reveal="fade"><a href="index.html">Home</a><span>/</span><a href="index.html#services">Services</a><span>/</span><span>Custom Houses</span></nav>
+    <p class="kicker" data-reveal="fade">Service 01</p>
+    <h1 class="display-xl page-hero__title mt-s" data-split>One home. Planned around your block.</h1>
+    <div class="page-hero__foot" data-reveal style="--d:400ms">
+      <p class="lead muted">For owners building a single new home. We assess the land, coordinate design and approvals, and manage the build through to handover.</p>
+      <a class="btn btn--solid" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="media-band mono-img" data-parallax="10" data-header="dark">
+  <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2200&q=72" alt="Contemporary single home with pool at dusk" loading="lazy">
+  <span class="img-tag">Indicative imagery</span>
+</div>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-grid__media mask-img mono-img" data-reveal><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=72" alt="Open-plan living room" loading="lazy"></div>
+      <div class="intro-grid__small mask-img mono-img" data-reveal style="--d:200ms"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=700&q=72" alt="White kitchen with island bench" loading="lazy"></div>
+      <div class="intro-grid__copy">
+        <p class="kicker">The service</p>
+        <h2 class="display-md" data-split>You make the decisions. We make them happen.</h2>
+        <div class="body-copy muted" data-reveal>
+          <p>A custom home involves a dozen parties: agent, surveyor, designer, engineer, certifier, council, builder, bank. Each one waits on another. We sit in the middle and keep them all moving.</p>
+          <p>You get one point of contact, one schedule and one set of numbers, from the first look at a block to the day you get the keys.</p>
+        </div>
+        <div class="btn-row" data-reveal><a class="link-arrow" href="#steps">See the six steps <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--panel" data-header="light">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Who it's for</p>
+      <h2 class="display-md" data-split>Three ways to start.</h2>
+    </div>
+    <div class="who">
+      <div data-reveal><span class="label text-green">A</span><h3>You already own a block.</h3><p>We check what it will take to build there, then take the project from design brief to handover.</p></div>
+      <div data-reveal style="--d:100ms"><span class="label text-green">B</span><h3>You're still looking.</h3><p>We help find and assess land before you buy, so the block suits the home you want and the budget you have.</p></div>
+      <div data-reveal style="--d:200ms"><span class="label text-green">C</span><h3>You're knocking down to rebuild.</h3><p>Demolition, services and the new build, coordinated so the gap between old house and new is as short as possible.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--black" id="steps" data-header="dark">
+  <div class="container">
+    <div class="sticky-split">
+      <div class="sticky-split__aside">
+        <p class="kicker">How it works</p>
+        <h2 class="display-lg" data-split>Six steps to the keys.</h2>
+        <p class="lead muted" data-reveal>Each step ends with a clear decision for you and a written record of where things stand.</p>
+        <div data-reveal><a class="btn btn--invert" href="contact.html">Start with step one <span class="arrow">→</span></a></div>
+      </div>
+      <div class="steps">
+        <div class="step-row"><span class="step-row__n">01</span><h3>Brief and budget</h3><div><p>We sit down with you to set the brief, the budget and the timeline that matters to you.</p><ul><li>Brief</li><li>Budget</li><li>Timeline</li></ul></div></div>
+        <div class="step-row"><span class="step-row__n">02</span><h3>Land check</h3><div><p>Zoning, overlays, easements, services, slope and soil. What the block allows and what it will cost.</p><ul><li>Zoning</li><li>Services</li><li>Site costs</li></ul></div></div>
+        <div class="step-row"><span class="step-row__n">03</span><h3>Design coordination</h3><div><p>We brief and manage the designer and engineers so the plans match the brief, the block and the budget.</p><ul><li>Designer</li><li>Engineer</li><li>Energy rating</li></ul></div></div>
+        <div class="step-row"><span class="step-row__n">04</span><h3>Approvals</h3><div><p>Planning and building consent lodged, tracked and answered. Every request and response logged.</p><ul><li>PlanSA</li><li>Planning consent</li><li>Building consent</li></ul></div></div>
+        <div class="step-row"><span class="step-row__n">05</span><h3>Build management</h3><div><p>Builder tender and contract, then weekly site visits and reports with photos through every stage.</p><ul><li>Tender</li><li>Contract</li><li>Site reports</li></ul></div></div>
+        <div class="step-row"><span class="step-row__n">06</span><h3>Handover</h3><div><p>Defects inspected and fixed, certificates and warranties collected, keys handed over.</p><ul><li>Defects</li><li>Certificates</li><li>Keys</li></ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">What's included</p>
+      <h2 class="display-md" data-split>What you get from us.</h2>
+      <p class="lead muted" data-reveal>The same four things on every project, whatever its size.</p>
+    </div>
+    <div class="principles">
+      <div class="principle" data-reveal><span class="principle__n">01</span><h3>One schedule.</h3><p>Every task, consultant and consent on one timeline, updated as things move.</p></div>
+      <div class="principle" data-reveal style="--d:100ms"><span class="principle__n">02</span><h3>Weekly reports.</h3><p>Photos, progress and next steps in plain language, every week of the build.</p></div>
+      <div class="principle" data-reveal style="--d:200ms"><span class="principle__n">03</span><h3>Cost tracking.</h3><p>Budget against actuals, with variations flagged before they're approved.</p></div>
+      <div class="principle" data-reveal style="--d:300ms"><span class="principle__n">04</span><h3>Independent eyes.</h3><p>We inspect on your behalf at each stage, not the builder's.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--white" data-header="light" style="padding-top:0">
+  <div class="container">
+    <div class="sticky-split">
+      <div class="sticky-split__aside">
+        <p class="kicker">Questions</p>
+        <h2 class="display-md" data-split>Asked often.</h2>
+      </div>
+      <div class="accordion">
+        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Are you a builder?<span class="acc-icon"></span></button><div class="acc-panel"><div class="acc-panel__inner">We're project managers. We coordinate the builder and every other party on your behalf, so you have someone on your side through the whole process.</div></div></div>
+        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Can I bring my own designer or builder?<span class="acc-icon"></span></button><div class="acc-panel"><div class="acc-panel__inner">Yes. We can work with people you've already chosen, or help you find and tender for them.</div></div></div>
+        <div class="acc-item"><button class="acc-btn" aria-expanded="false">When should I contact you?<span class="acc-icon"></span></button><div class="acc-panel"><div class="acc-panel__inner">As early as possible, ideally before you buy land. The decisions made in the first weeks shape the cost of everything after them.</div></div></div>
+        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Do you work outside metropolitan Adelaide?<span class="acc-icon"></span></button><div class="acc-panel"><div class="acc-panel__inner">Talk to us about your site. We'll tell you plainly whether we're the right fit.</div></div></div>
+        <div class="acc-item"><button class="acc-btn" aria-expanded="false">How do you charge?<span class="acc-icon"></span></button><div class="acc-panel"><div class="acc-panel__inner">Fees depend on the scope and the stages you need us for. We'll give you a written fee proposal after our first conversation.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="next-project" href="development-projects.html" data-header="dark" data-cursor="Next">
+  <div class="next-project__bg"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2000&q=72" alt="" loading="lazy"></div>
+  <div class="container next-project__inner">
+    <p class="kicker">Next service · 02</p>
+    <p class="display-xl mt-s">Development Projects →</p>
+  </div>
+</a>
+
+<section class="band band--black cta" data-header="dark" aria-labelledby="cta-title">
+  <div class="container">
+    <p class="kicker" data-reveal>Start a project</p>
+    <h2 id="cta-title" class="visually-hidden">Let's build something together.</h2>
+  </div>
+  <div class="marquee mt-m" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Let's build something together. <i></i></span>
+      <span class="marquee__item">Let's build something together. <i></i></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cta__row">
+      <div class="cta__contacts">
+        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
+      </div>
+      <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" data-header="dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__lead">Land. Build. Handover.</p>
+        <p class="caption mt-s">Project management and development. Adelaide, South Australia.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="custom-houses.html">Custom Houses</a></li>
+          <li><a href="development-projects.html">Development Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+61415386318">Khush · 0415 386 318</a></li>
+          <li><a href="tel:+61406437761">Vivek · 0406 437 761</a></li>
+          <li><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></li>
+          <li class="caption">Adelaide, SA · <span data-clock></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__giant" aria-hidden="true"><img src="assets/img/hh-logo-white.png" alt="" loading="lazy"></div>
+    <div class="footer__bar">
+      <span>Hills &amp; Harbour | Website | <span data-year>2026</span></span>
+      <span>Adelaide, South Australia</span>
+      <a href="#" class="to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Clean URLs on Apache (cPanel and most shared hosting). Upload next to index.html.
+# Pages keep their .html links so the site also works opened from a folder;
+# on the server, /about.html redirects to /about and /about serves about.html.
+#   /projects/            -> projects/index.html
+#   /projects/glenunga    -> projects/glenunga.html
+#   /blog/                -> blog/index.html
+#   /blog/<article>       -> blog/<article>.html
+Options -MultiViews
+RewriteEngine On
+
+# Old flat URLs from before the folders: /project-glenunga -> /projects/glenunga
+RewriteRule ^(projects|blog)\.html$ /$1/ [R=301,L,NC]
+RewriteRule ^project-([a-z0-9-]+?)(?:\.html)?$ /projects/$1 [R=301,L,NC]
+RewriteRule ^blog-([a-z0-9-]+?)(?:\.html)?$ /blog/$1 [R=301,L,NC]
+
+# /about.html -> /about, /index.html -> /, /projects/index.html -> /projects/
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.html[\s?] [NC]
+RewriteRule ^ /%1%2 [R=301,L,NE]
+
+# /about/ -> /about (folders such as /projects/ keep their slash)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# /about -> about.html, /projects/glenunga -> projects/glenunga.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
