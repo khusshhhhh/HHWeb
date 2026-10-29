@@ -187,18 +187,20 @@
   };
   header && header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
 
-  // Mobile menu
+  // Mobile menu: panel wipes down, then rows, tiles and contacts rise in order
   const burger = $('.burger');
   burger && burger.addEventListener('click', () => {
     const open = !d.body.classList.contains('menu-open');
     d.body.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', String(open));
-    $$('.mobile-menu__list a').forEach((a, i) => (a.style.transitionDelay = open ? 250 + i * 60 + 'ms' : '0ms'));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    $$('.mobile-menu [data-mm]').forEach((el, i) => (el.style.transitionDelay = open ? 220 + i * 55 + 'ms' : '0ms'));
     if (lenis) open ? lenis.stop() : lenis.start();
   });
   d.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && d.body.classList.contains('menu-open')) burger.click();
+    if (e.key === 'Escape' && d.body.classList.contains('menu-open') && !d.body.classList.contains('modal-open')) burger.click();
   });
+  addEventListener('resize', () => { if (innerWidth > 1080 && d.body.classList.contains('menu-open')) burger.click(); });
 
   // Dropdown on touch / keyboard
   $$('.nav__item--drop').forEach((item) => {
@@ -450,41 +452,197 @@
     } catch (_) {}
   }));
 
-  /* ---------- Contact form → email draft ---------- */
-  const form = $('#enquiry-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  /* ---------- Modals (founder profiles, development enquiry) ---------- */
+  let openModal = null, modalReturn = null;
+  const focusables = (m) => $$('a[href], button:not([disabled]), input:not([type="hidden"]):not([tabindex="-1"]), select, textarea', m).filter((el) => el.offsetParent !== null);
+  const closeModal = () => {
+    if (!openModal) return;
+    const m = openModal;
+    openModal = null;
+    m.classList.remove('is-open');
+    m.setAttribute('aria-hidden', 'true');
+    d.body.classList.remove('modal-open');
+    if (lenis && !d.body.classList.contains('menu-open')) lenis.start();
+    modalReturn && modalReturn.focus && modalReturn.focus({ preventScroll: true });
+  };
+  const showModal = (m, opener) => {
+    if (openModal === m) return;
+    const swap = !!openModal;
+    if (swap) { openModal.classList.remove('is-open'); openModal.setAttribute('aria-hidden', 'true'); } else modalReturn = opener;
+    openModal = m;
+    $$('[data-m]', m).forEach((el, i) => (el.style.transitionDelay = 260 + i * 60 + 'ms'));
+    m.setAttribute('aria-hidden', 'false');
+    m.classList.add('is-open');
+    d.body.classList.add('modal-open');
+    if (lenis) lenis.stop();
+    const panel = $('.modal__panel', m);
+    if (panel) panel.scrollTop = 0;
+    m.dispatchEvent(new CustomEvent('modal:open', { detail: { opener } }));
+    setTimeout(() => { const c = $('.modal__close', m); c && c.focus({ preventScroll: true }); }, swap ? 0 : 400);
+  };
+  d.addEventListener('click', (e) => {
+    const opener = e.target.closest('[data-modal-open]');
+    if (opener) { const m = d.getElementById(opener.dataset.modalOpen); if (m) { e.preventDefault(); showModal(m, opener); } return; }
+    if (openModal && e.target.closest('[data-modal-close]')) closeModal();
+  });
+  d.addEventListener('keydown', (e) => {
+    if (!openModal) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    const f = focusables(openModal);
+    if (!f.length) return;
+    if (e.shiftKey && d.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && d.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+
+  // Development enquiry: the chosen project fills the side panel
+  const devModal = $('#dev-enquiry');
+  if (devModal) {
+    const sel = $('[data-enquire-select]', devModal);
+    const img = $('[data-enquire-img]', devModal);
+    const fill = () => {
+      const o = sel.selectedOptions[0];
+      const has = !!(o && o.value);
+      $('[data-enquire-name]', devModal).textContent = has ? o.value : 'Our developments';
+      $('[data-enquire-status]', devModal).textContent = has ? o.dataset.status : 'Now enquiring';
+      $('[data-enquire-homes]', devModal).textContent = has ? o.dataset.homes : 'Townhouses and new homes';
+      $('[data-enquire-where]', devModal).textContent = has ? o.dataset.where : 'Adelaide, SA';
+      const src = has ? o.dataset.img : '';
+      devModal.classList.toggle('has-img', !!src);
+      if (src && img.getAttribute('src') !== src) { img.classList.remove('is-in'); img.onload = () => img.classList.add('is-in'); img.src = src; }
+    };
+    sel.addEventListener('change', fill);
+    devModal.addEventListener('modal:open', (e) => {
+      const p = e.detail.opener && e.detail.opener.dataset.project;
+      const form = $('form', devModal);
+      if (form.classList.contains('is-sent')) { form.classList.remove('is-sent'); form.reset(); form.dispatchEvent(new Event('hh:reset')); }
+      if (p) sel.value = p;
+      fill();
+    });
+  }
+
+  /* ---------- "I'm not a robot" check ---------- */
+  // Ticking asks the server for a signed, timestamped token; send.php rejects posts without a valid one
+  const tokenUrl = (form) => form.getAttribute('action') + '?token=1';
+  $$('[data-hcheck]').forEach((hc) => {
+    const box = $('.hcheck__box', hc);
+    const form = hc.closest('form');
+    const reset = () => { hc.classList.remove('is-busy', 'is-ok'); box.setAttribute('aria-checked', 'false'); $('[name="hc_t"]', hc).value = ''; $('[name="hc_s"]', hc).value = ''; };
+    box.addEventListener('click', async (e) => {
+      if (!e.isTrusted || hc.classList.contains('is-busy') || hc.classList.contains('is-ok')) return;
+      hc.classList.remove('has-error');
+      hc.classList.add('is-busy');
+      try {
+        const [res] = await Promise.all([fetch(tokenUrl(form), { cache: 'no-store' }).then((r) => r.json()), new Promise((r) => setTimeout(r, 900))]);
+        $('[name="hc_t"]', hc).value = res.t;
+        $('[name="hc_s"]', hc).value = res.s;
+        hc.dataset.at = Date.now();
+        hc.classList.remove('is-busy');
+        hc.classList.add('is-ok');
+        box.setAttribute('aria-checked', 'true');
+      } catch (_) {
+        reset();
+        hc.classList.add('has-error');
+        $('.field__err', hc).textContent = "Couldn't verify just now. Please try again.";
+      }
+    });
+    form && form.addEventListener('hh:reset', reset);
+  });
+
+  /* ---------- Enquiry forms → send.php ---------- */
+  $$('form[data-enquiry]').forEach((form) => {
+    const status = $('.form__status', form);
+    const label = $('.btn__label', form);
+    const statusText = status ? status.textContent : '';
+    const validate = () => {
       let ok = true;
       $$('[required]', form).forEach((input) => {
+        const v = input.value.trim();
+        const valid = input.type === 'email' ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+          : input.type === 'tel' ? v.replace(/\D/g, '').length >= 8
+          : input.tagName === 'SELECT' ? !!v : v.length > 1;
         const field = input.closest('.field');
-        const valid = input.type === 'email' ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim()) : input.value.trim().length > 1;
         field && field.classList.toggle('has-error', !valid);
         if (!valid) ok = false;
       });
-      if (!ok) { const first = $('.has-error input, .has-error textarea', form); first && first.focus(); return; }
+      const hc = $('[data-hcheck]', form);
+      if (hc && !hc.classList.contains('is-ok')) {
+        hc.classList.add('has-error');
+        $('.field__err', hc).textContent = "Please confirm you're not a robot.";
+        ok = false;
+      }
+      return ok;
+    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (form.classList.contains('is-sending')) return;
+      if (!validate()) {
+        const first = $('.has-error input, .has-error textarea, .has-error select, .hcheck.has-error .hcheck__box', form);
+        first && first.focus();
+        return;
+      }
+      // Multi-choice fields go as one comma-separated value
       const data = new FormData(form);
-      const types = data.getAll('type').join(', ') || 'General enquiry';
-      const body = [
-        'Name: ' + data.get('name'),
-        'Email: ' + data.get('email'),
-        'Phone: ' + (data.get('phone') || '—'),
-        'Suburb / site: ' + (data.get('suburb') || '—'),
-        'Interested in: ' + types,
-        '',
-        data.get('message'),
-      ].join('\n');
-      window.location.href = 'mailto:admin@hillsandharbour.com.au?subject=' + encodeURIComponent('Project enquiry · ' + types) + '&body=' + encodeURIComponent(body);
-      form.classList.add('is-sent');
-      if (hasGSAP) ScrollTrigger.refresh();
+      const body = new URLSearchParams();
+      [...new Set(data.keys())].forEach((k) => body.append(k, data.getAll(k).join(', ')));
+      form.classList.add('is-sending');
+      if (label) label.textContent = 'Sending…';
+      if (status) { status.textContent = statusText; status.classList.remove('is-error'); }
+      const hc = $('[data-hcheck]', form);
+      try {
+        // send.php wants a few seconds between the tick and the send; wait out the rest rather than fail
+        const wait = hc ? 3300 - (Date.now() - +hc.dataset.at) : 0;
+        if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+        const res = await fetch(form.getAttribute('action'), { method: 'POST', body, headers: { Accept: 'application/json' } });
+        const json = await res.json().catch(() => ({ ok: false }));
+        if (!res.ok || !json.ok) {
+          if (hc && /robot|expired/i.test(json.message || '')) form.dispatchEvent(new Event('hh:reset'));
+          throw new Error(json.message || 'Something went wrong.');
+        }
+        form.classList.add('is-sent');
+        const done = form.nextElementSibling;
+        done && done.focus && done.focus({ preventScroll: true });
+        if (!form.closest('.modal')) scrollTo(form.parentElement);
+        if (hasGSAP) ScrollTrigger.refresh();
+      } catch (err) {
+        if (status) { status.textContent = (err instanceof TypeError ? "We couldn't reach the server." : err.message) + ' You can also email admin@hillsandharbour.com.au.'; status.classList.add('is-error'); }
+      } finally {
+        form.classList.remove('is-sending');
+        if (label) label.textContent = 'Send enquiry';
+      }
     });
-    $$('input, textarea', form).forEach((i) => i.addEventListener('input', () => i.closest('.field') && i.closest('.field').classList.remove('has-error')));
+    const clear = (e) => { const f = e.target.closest('.field'); f && f.classList.remove('has-error'); };
+    form.addEventListener('input', clear);
+    form.addEventListener('change', clear);
+  });
+
+  /* ---------- Next project: a different one on every visit ---------- */
+  const nextEl = $('[data-next-project]');
+  if (nextEl) {
+    const LIST = [
+      ['glenunga', 'Glenunga', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=72', 'Development · In planning'],
+      ['ingle-farm', 'Ingle Farm', '../assets/img/projects/ingle-farm-exterior.jpg', 'Development · Complete'],
+      ['parafield-gardens', 'Parafield Gardens', '../assets/img/projects/parafield-gardens-render.jpg', 'Development · Planning granted'],
+      ['payneham-south', 'Payneham South', '../assets/img/projects/payneham-south-front.jpg', 'Custom house · In construction'],
+      ['telowie-avenue', 'Telowie Avenue', '../assets/img/projects/telowie-avenue-render.webp', 'Custom house · In construction'],
+      ['davoren-park', 'Davoren Park', 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2000&q=72', 'Development · Approved'],
+    ];
+    let last = '';
+    try { last = sessionStorage.getItem('hh-next') || ''; } catch (_) {}
+    let pool = LIST.filter((p) => p[0] !== nextEl.dataset.nextProject && p[0] !== last);
+    if (!pool.length) pool = LIST.filter((p) => p[0] !== nextEl.dataset.nextProject);
+    const [slug, name, src, meta] = pool[Math.floor(Math.random() * pool.length)];
+    try { sessionStorage.setItem('hh-next', slug); } catch (_) {}
+    nextEl.href = slug + '.html';
+    $('img', nextEl).src = src;
+    $('.kicker', nextEl).textContent = 'Next project · ' + meta;
+    $('.display-xl', nextEl).textContent = name + ' →';
   }
 
   /* ---------- Dot-matrix map of metropolitan Adelaide, Broadview highlighted ---------- */
   const dotmap = $('.dotmap canvas');
   if (dotmap) {
-    // Roughly 24 km square: Gulf St Vincent to the west, the Adelaide Hills to the east
+    // Roughly 24 km square around metropolitan Adelaide
     const W = 138.4, E = 138.74, N = -34.78, S = -35.06;
     const LAND = [[138.74,-34.78],[138.481,-34.78],[138.476,-34.81],[138.48,-34.84],[138.488,-34.88],[138.493,-34.91],[138.503,-34.95],[138.512,-34.98],[138.516,-35.0],[138.52,-35.03],[138.508,-35.06],[138.74,-35.06]];
     const HILLS = [[138.74,-34.78],[138.70,-34.78],[138.69,-34.83],[138.67,-34.88],[138.655,-34.93],[138.64,-34.97],[138.625,-35.0],[138.615,-35.06],[138.74,-35.06]];
@@ -558,6 +716,8 @@
   if (!hasGSAP || reduce) return;
 
   const mm = gsap.matchMedia();
+  // Mobile address bars resize the viewport while scrolling; don't re-measure pinned scenes for that
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   // Parallax images
   $$('[data-parallax]').forEach((el) => {
@@ -576,39 +736,52 @@
     onReady(() => gsap.to(hills, { strokeDashoffset: 0, duration: 2.6, ease: 'power3.inOut', stagger: 0.18, delay: 0.3 }));
   }
 
-  // Right block, right build: the block is pegged out, the house rises from the ground line, then fills the screen
-  const expand = $('.expand');
-  if (expand) {
-    const box = () => {
-      const cs = getComputedStyle(expand);
-      return { t: cs.getPropertyValue('--bt').trim(), x: cs.getPropertyValue('--bx').trim(), b: cs.getPropertyValue('--bb').trim() };
-    };
-    const ground = () => { const v = box(); return 'inset(' + (100 - parseFloat(v.b)) + '% ' + v.x + ' ' + v.b + ' ' + v.x + ')'; };
-    const plot = () => { const v = box(); return 'inset(' + v.t + ' ' + v.x + ' ' + v.b + ' ' + v.x + ')'; };
-    const stage = $('[data-expand-stage]');
+  // Right block, right build: the elevation is drawn line by line, the render scans in behind it, then fills the screen
+  const bp = $('.blueprint');
+  if (bp) {
+    const frame = $('.blueprint__frame', bp);
+    const stage = $('[data-bp-stage]', bp);
     const setStage = (s) => { if (stage && stage.textContent !== s) stage.textContent = s; };
-    const tl = gsap.timeline({
-      defaults: { ease: 'none' },
-      scrollTrigger: {
-        trigger: expand, start: 'top top', end: '+=220%', scrub: 0.8, pin: true, anticipatePin: 1, invalidateOnRefresh: true,
-        onUpdate: (st) => setStage(st.progress < 0.3 ? 'Site' : st.progress < 0.64 ? 'Build' : 'Handover'),
-      },
+    const sel = (s) => $$(s, bp);
+    mm.add({ wide: '(min-width: 701px)', narrow: '(max-width: 700px)' }, (ctx) => {
+      const narrow = ctx.conditions.narrow;
+      // The frame starts as a 4:3 sheet in the middle of the screen and ends as the whole screen
+      const sheet = () => {
+        const w = Math.min(innerWidth * (narrow ? 0.9 : 0.62), (innerHeight - (narrow ? 260 : 230)) * (4 / 3), 1100);
+        return { width: w, height: w * 0.75 };
+      };
+      const tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: bp, start: 'top top', end: narrow ? '+=240%' : '+=300%', scrub: 0.9, pin: true, anticipatePin: 1, invalidateOnRefresh: true,
+          onUpdate: (st) => setStage(st.progress < 0.36 ? 'Drawing' : st.progress < 0.62 ? 'Build' : 'Handover'),
+        },
+      });
+      tl.fromTo('.blueprint__corner', { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.05, stagger: 0.01 }, 0)
+        .fromTo('.blueprint__words', { opacity: 0, yPercent: 40 }, { opacity: 1, yPercent: 0, duration: 0.06 }, 0.02)
+        // 1. drawing: site, walls, frame, roof, openings, then dimensions
+        .fromTo(sel('.bp-site .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.08, stagger: 0.02 }, 0.03)
+        .fromTo(sel('.bp-walls .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.08, stagger: 0.02 }, 0.08)
+        .fromTo(sel('.bp-frame .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.1, stagger: 0.03 }, 0.12)
+        .fromTo(sel('.bp-roof .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.08, stagger: 0.02 }, 0.17)
+        .fromTo(sel('.bp-open .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.07, stagger: 0.008 }, 0.2)
+        .fromTo(sel('.bp-dims .bl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.06, stagger: 0.02 }, 0.27)
+        .fromTo(sel('.bp-dims .bt'), { opacity: 0 }, { opacity: 1, duration: 0.04, stagger: 0.01 }, 0.3)
+        // 2. build: the render scans up from the ground line, lines fade back into it
+        .fromTo('.blueprint__photo', { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.2, ease: 'power1.inOut' }, 0.38)
+        .fromTo('.blueprint__scan', { top: '100%', opacity: 1 }, { top: '0%', duration: 0.2, ease: 'power1.inOut', immediateRender: false }, 0.38)
+        .to('.blueprint__scan', { opacity: 0, duration: 0.03 }, 0.58)
+        .fromTo('.blueprint__photo img', { filter: 'grayscale(1) brightness(0.7)' }, { filter: 'grayscale(0) brightness(1)', duration: 0.26 }, 0.38)
+        .to('.blueprint__lines', { opacity: 0.18, duration: 0.14 }, 0.46)
+        .to('.blueprint__roll-inner', { yPercent: -50, duration: 0.06, ease: 'power2.inOut' }, 0.48)
+        // 3. handover: the sheet becomes the screen
+        .fromTo(frame, { width: () => sheet().width, height: () => sheet().height, marginTop: narrow ? 72 : 40 }, { width: () => innerWidth, height: () => innerHeight, marginTop: 0, duration: 0.24, ease: 'power2.inOut', immediateRender: false }, 0.64)
+        .to(['.blueprint__lines', '.blueprint__corner'], { opacity: 0, duration: 0.1 }, 0.64)
+        .to(['.blueprint__head', '.blueprint__meta'], { opacity: 0, y: -24, duration: 0.1 }, 0.66)
+        .fromTo('.blueprint__shade', { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.82)
+        .fromTo('.blueprint__copy', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.1 }, 0.88);
+      return () => gsap.set(frame, { clearProps: 'width,height,marginTop' });
     });
-    tl.fromTo('.expand__ground', { scaleX: 0 }, { scaleX: 1, duration: 0.12 }, 0)
-      .fromTo('.expand__words', { opacity: 0, yPercent: 40 }, { opacity: 1, yPercent: 0, duration: 0.08 }, 0.04)
-      .fromTo('.expand__plot rect', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.16 }, 0.04)
-      .fromTo('.expand__peg', { scale: 0 }, { scale: 1, duration: 0.04, stagger: 0.025 }, 0.12)
-      .fromTo(['.expand__dim', '.expand__tag'], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.06 }, 0.14)
-      // the build rises from the ground line inside the block
-      .fromTo('.expand__frame', { clipPath: ground }, { clipPath: plot, duration: 0.3, ease: 'power1.inOut' }, 0.26)
-      .fromTo('.expand__frame img', { yPercent: 18, scale: 1.18 }, { yPercent: 0, scale: 1.08, duration: 0.3, ease: 'power1.inOut' }, 0.26)
-      .to('.expand__roll-inner', { yPercent: -50, duration: 0.07, ease: 'power2.inOut' }, 0.4)
-      // then it takes over the screen
-      .fromTo('.expand__frame', { clipPath: plot }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.26, ease: 'power2.in', immediateRender: false }, 0.66)
-      .to('.expand__frame img', { scale: 1, duration: 0.26 }, 0.66)
-      .to(['.expand__plot', '.expand__ground'], { opacity: 0, scale: 1.08, duration: 0.14 }, 0.66)
-      .to('.expand__words', { opacity: 0, yPercent: -30, duration: 0.1 }, 0.72)
-      .fromTo('.expand__copy', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.1 }, 0.88);
   }
 
   // Build sequence (Land → Frame → Roof → Handover)
@@ -650,9 +823,16 @@
       });
       setStage(0);
     });
+    // Phones and tablets: the same pinned scene, laid out as drawing on top and one stage card at a time below
     mm.add('(max-width: 900px)', () => {
       const tl = makeTl();
-      ScrollTrigger.create({ trigger: build, start: 'top 75%', end: 'bottom 60%', scrub: 1, animation: tl });
+      ScrollTrigger.create({
+        trigger: build, start: 'top top', end: '+=420%', pin: true, scrub: 0.6, animation: tl, anticipatePin: 1,
+        onUpdate: (self) => setStage(self.progress),
+      });
+      build.classList.add('is-scene');
+      setStage(0);
+      return () => build.classList.remove('is-scene');
     });
   }
 

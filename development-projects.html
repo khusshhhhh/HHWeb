@@ -83,20 +83,34 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu__list">
-    <li><a href="index.html" data-nav="home">Home <small>00</small></a></li>
-    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
-    <li class="sub"><a href="custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
-    <li class="sub"><a href="development-projects.html" data-nav="development" aria-current="page">Development Projects <small>03</small></a></li>
-    <li><a href="about.html" data-nav="about">About <small>04</small></a></li>
-    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
-  </ul>
+<div class="mobile-menu" id="mobile-menu" data-lenis-prevent>
+  <div class="mobile-menu__top" data-mm>
+    <span><span class="live-dot"></span>Adelaide · <span data-clock></span></span>
+    <span>Menu</span>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li data-mm><a href="index.html" data-nav="home"><small>01</small><span>Home</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="projects/index.html" data-nav="projects"><small>02</small><span>Projects</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="about.html" data-nav="about"><small>03</small><span>About</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="contact.html" data-nav="contact"><small>04</small><span>Contact</span><i aria-hidden="true">→</i></a></li>
+    </ul>
+    <p class="mobile-menu__label" data-mm>Services</p>
+    <div class="mobile-menu__services">
+      <a href="custom-houses.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 01</small><span>Custom Houses</span>
+      </a>
+      <a href="development-projects.html" data-mm aria-current="page">
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 02</small><span>Development Projects</span>
+      </a>
+    </div>
+  </nav>
   <div class="mobile-menu__foot">
-    <span class="label">Talk to us</span>
-    <a href="tel:+61415386318">Khush Patel · Project Manager · 0415 386 318</a>
-    <a href="tel:+61406437761">Vivek Virani · Site Coordinator · 0406 437 761</a>
-    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+    <a class="mobile-menu__call" href="tel:+61415386318" data-mm><small>Call Khush</small><span>0415 386 318</span></a>
+    <a class="mobile-menu__call" href="tel:+61406437761" data-mm><small>Call Vivek</small><span>0406 437 761</span></a>
+    <a class="mobile-menu__mail" href="mailto:admin@hillsandharbour.com.au" data-mm><small>Email</small><span>admin@hillsandharbour.com.au</span></a>
   </div>
 </div>
 
@@ -110,7 +124,7 @@
     <h1 class="display-xl page-hero__title mt-s" data-split>More homes from the same ground.</h1>
     <div class="page-hero__foot" data-reveal style="--d:400ms">
       <p class="lead muted">For landowners and investors. Feasibility, subdivision, approvals and the build of multiple dwellings, managed as one project.</p>
-      <a class="btn btn--invert" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a>
+      <div class="btn-row"><a class="btn btn--invert" href="contact.html" data-magnetic>Talk to us <span class="arrow">→</span></a><a class="btn" href="#developments">Buy a home <span class="arrow">→</span></a></div>
     </div>
   </div>
 </section>
@@ -224,6 +238,70 @@
   </div>
 </section>
 
+<section class="band band--white" id="developments" data-header="light">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <p class="kicker">Our developments</p>
+      <h2 class="display-md" data-split>Looking to buy? Ask about a home.</h2>
+      <p class="lead muted" data-reveal>Home buyers and investors can enquire about any of our developments: availability, plans, pricing and timing.</p>
+    </div>
+    <div class="dev-grid">
+      <article class="dev-card" data-reveal style="--d:0ms">
+        <a class="dev-card__media mask-img mono-img" href="projects/glenunga.html" data-cursor="View"><span class="dev-card__plan" aria-hidden="true"><svg viewBox="0 0 160 100"><rect x="6" y="8" width="148" height="84"/><path d="M42 8v84M78 8v66M114 8v66M42 74h112" /></svg></span></a>
+        <div class="dev-card__body">
+          <div class="dev-card__top"><span class="dev-card__n">01</span><span class="chip chip--dark">In planning</span></div>
+          <h3 class="dev-card__title"><a href="projects/glenunga.html">Glenunga Residences</a></h3>
+          <p class="dev-card__meta">4 two-storey homes · Glenunga, SA 5064</p>
+          <div class="dev-card__actions">
+            <button class="btn btn--solid" type="button" data-modal-open="dev-enquiry" data-project="Glenunga Residences">Enquire <span class="arrow">→</span></button>
+            <a class="link-arrow" href="projects/glenunga.html">View project <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="dev-card" data-reveal style="--d:90ms">
+        <a class="dev-card__media mask-img mono-img" href="projects/parafield-gardens.html" data-cursor="View"><img src="assets/img/projects/parafield-gardens-render.jpg" alt="" loading="lazy"><span class="img-tag">Artist's impression</span></a>
+        <div class="dev-card__body">
+          <div class="dev-card__top"><span class="dev-card__n">02</span><span class="chip chip--granted">Planning granted</span></div>
+          <h3 class="dev-card__title"><a href="projects/parafield-gardens.html">Parafield Gardens Homes</a></h3>
+          <p class="dev-card__meta">2 single-storey homes · Parafield Gardens, SA 5107</p>
+          <div class="dev-card__actions">
+            <button class="btn btn--solid" type="button" data-modal-open="dev-enquiry" data-project="Parafield Gardens Homes">Enquire <span class="arrow">→</span></button>
+            <a class="link-arrow" href="projects/parafield-gardens.html">View project <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="dev-card" data-reveal style="--d:180ms">
+        <a class="dev-card__media mask-img mono-img" href="projects/davoren-park.html" data-cursor="View"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=70" alt="" loading="lazy"><span class="img-tag">Indicative imagery</span></a>
+        <div class="dev-card__body">
+          <div class="dev-card__top"><span class="dev-card__n">03</span><span class="chip chip--granted">Approved</span></div>
+          <h3 class="dev-card__title"><a href="projects/davoren-park.html">Davoren Park Townhouses</a></h3>
+          <p class="dev-card__meta">4 two-storey townhouses · Davoren Park, SA</p>
+          <div class="dev-card__actions">
+            <button class="btn btn--solid" type="button" data-modal-open="dev-enquiry" data-project="Davoren Park Townhouses">Enquire <span class="arrow">→</span></button>
+            <a class="link-arrow" href="projects/davoren-park.html">View project <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="dev-card" data-reveal style="--d:270ms">
+        <a class="dev-card__media mask-img mono-img" href="projects/ingle-farm.html" data-cursor="View"><img src="assets/img/projects/ingle-farm-exterior.jpg" alt="" loading="lazy"></a>
+        <div class="dev-card__body">
+          <div class="dev-card__top"><span class="dev-card__n">04</span><span class="chip chip--granted">Complete</span></div>
+          <h3 class="dev-card__title"><a href="projects/ingle-farm.html">Ingle Farm Homes</a></h3>
+          <p class="dev-card__meta">2 single-storey homes · Ingle Farm, SA 5093</p>
+          <div class="dev-card__actions">
+            <button class="btn btn--solid" type="button" data-modal-open="dev-enquiry" data-project="Ingle Farm Homes">Enquire <span class="arrow">→</span></button>
+            <a class="link-arrow" href="projects/ingle-farm.html">View project <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="dev-grid__foot" data-reveal>
+      <p class="muted">Want to hear about the next release first?</p>
+      <button class="link-arrow" type="button" data-modal-open="dev-enquiry" data-project="Upcoming developments">Register interest <span class="arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
 <section class="band band--panel" data-header="light">
   <div class="container">
     <div class="sticky-split">
@@ -263,14 +341,91 @@
   <div class="container">
     <div class="cta__row">
       <div class="cta__contacts">
-        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
-        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal><span class="label muted">Khush Patel</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani</span><a href="tel:+61406437761">0406 437 761</a></div>
         <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
       </div>
       <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
+
+<div class="modal modal--enquire" id="dev-enquiry" role="dialog" aria-modal="true" aria-labelledby="dev-enquiry-title" aria-hidden="true">
+  <div class="modal__scrim" data-modal-close></div>
+  <div class="modal__panel" data-lenis-prevent>
+    <div class="modal__bar"><span>Development enquiry</span><button class="modal__close" type="button" data-modal-close aria-label="Close enquiry"><span></span><span></span></button></div>
+    <div class="enquire">
+      <aside class="enquire__aside grid-bg" data-m>
+        <div class="enquire__img"><img alt="" data-enquire-img></div>
+        <div class="enquire__info">
+          <p class="kicker">Buy or invest</p>
+          <h2 class="display-md" id="dev-enquiry-title" data-enquire-name>Our developments</h2>
+          <span class="chip" data-enquire-status>Now enquiring</span>
+          <dl class="enquire__facts">
+            <div><dt>Homes</dt><dd data-enquire-homes>Townhouses and new homes</dd></div>
+            <div><dt>Location</dt><dd data-enquire-where>Adelaide, SA</dd></div>
+          </dl>
+          <p class="caption">Ask about availability, floor plans, pricing or timing. Khush or Vivek will reply within one business day.</p>
+        </div>
+      </aside>
+      <div class="enquire__main">
+        <form class="form" action="send.php" method="post" novalidate data-enquiry data-m>
+          <input type="hidden" name="form" value="development">
+          <div class="field field--select"><select id="d-project" name="project" required data-enquire-select>
+                <option value="">Choose a development</option>
+                <option value="Glenunga Residences" data-status="In planning" data-homes="4 two-storey homes" data-where="Glenunga, SA 5064" data-img="">Glenunga Residences</option>
+                <option value="Parafield Gardens Homes" data-status="Planning granted" data-homes="2 single-storey homes" data-where="Parafield Gardens, SA 5107" data-img="assets/img/projects/parafield-gardens-render.jpg">Parafield Gardens Homes</option>
+                <option value="Davoren Park Townhouses" data-status="Approved" data-homes="4 two-storey townhouses" data-where="Davoren Park, SA" data-img="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=70">Davoren Park Townhouses</option>
+                <option value="Ingle Farm Homes" data-status="Complete" data-homes="2 single-storey homes" data-where="Ingle Farm, SA 5093" data-img="assets/img/projects/ingle-farm-exterior.jpg">Ingle Farm Homes</option>
+                <option value="Upcoming developments" data-status="Coming soon" data-homes="New releases" data-where="Adelaide, SA" data-img="">Any upcoming development</option>
+              </select><label for="d-project">Development *</label><span class="field__err">Please choose a development.</span></div>
+          <div class="form__row">
+            <div class="field"><input id="d-name" name="name" type="text" placeholder=" " autocomplete="name" required><label for="d-name">Your name *</label><span class="field__err">Please add your name.</span></div>
+            <div class="field"><input id="d-email" name="email" type="email" placeholder=" " autocomplete="email" required><label for="d-email">Email *</label><span class="field__err">Please add a valid email.</span></div>
+          </div>
+          <div class="form__row">
+            <div class="field"><input id="d-phone" name="phone" type="tel" placeholder=" " autocomplete="tel" required><label for="d-phone">Phone *</label><span class="field__err">Please add a phone number.</span></div>
+            <div class="field field--select"><select id="d-buyer" name="buyer"><option value="">Choose one</option><option>Home buyer</option><option>First home buyer</option><option>Investor</option><option>Agent or buyer's advocate</option><option>Other</option></select><label for="d-buyer">I am a</label></div>
+          </div>
+          <div class="choice-group">
+            <span class="label">I'd like to know about</span>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="ask" value="Availability"><span>Availability</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Pricing"><span>Pricing</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Floor plans"><span>Floor plans</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Inclusions"><span>Inclusions</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="Completion date"><span>Completion date</span></label>
+              <label class="choice"><input type="checkbox" name="ask" value="An inspection"><span>An inspection</span></label>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field field--select"><select id="d-finance" name="finance"><option value="">Choose one</option><option>Pre-approved</option><option>Arranging finance</option><option>Cash buyer</option><option>Not yet</option></select><label for="d-finance">Finance</label></div>
+            <div class="field field--select"><select id="d-timeframe" name="timeframe"><option value="">Choose one</option><option>Ready now</option><option>Within 3 months</option><option>3 to 6 months</option><option>6 to 12 months</option><option>Just looking</option></select><label for="d-timeframe">When you'd like to buy</label></div>
+          </div>
+          <div class="field"><textarea id="d-msg" name="message" placeholder=" " rows="3"></textarea><label for="d-msg">Questions or notes</label></div>
+          <div class="hcheck" data-hcheck>
+            <button class="hcheck__box" type="button" role="checkbox" aria-checked="false" aria-labelledby="hc-dev"><span class="hcheck__spin"></span><svg class="hcheck__tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+            <span class="hcheck__text" id="hc-dev">I'm not a robot</span>
+            <span class="hcheck__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 22L24 6l18 16v20H6z"/><rect x="20" y="29" width="8" height="13"/></svg>Human check</span>
+            <input type="hidden" name="hc_t"><input type="hidden" name="hc_s">
+            <span class="field__err">Please confirm you're not a robot.</span>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave this empty <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+          <div class="form__foot">
+            <p class="caption form__status" role="status">Goes straight to admin@hillsandharbour.com.au</p>
+            <button class="btn btn--solid" type="submit"><span class="btn__label">Send enquiry</span> <span class="arrow">→</span></button>
+          </div>
+        </form>
+        <div class="form-success" tabindex="-1">
+          <span class="chip chip--granted" style="width:fit-content">✓ Enquiry sent</span>
+          <h3 class="display-md">Thanks. It's with us.</h3>
+          <p class="muted">We'll be in touch within one business day with the details you asked for.</p>
+          <button class="link-arrow" type="button" data-modal-close style="width:fit-content">Close <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </main>
 

@@ -83,20 +83,34 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu__list">
-    <li><a href="../index.html" data-nav="home">Home <small>00</small></a></li>
-    <li><a href="index.html" data-nav="projects" aria-current="page">Projects <small>01</small></a></li>
-    <li class="sub"><a href="../custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
-    <li class="sub"><a href="../development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
-    <li><a href="../about.html" data-nav="about">About <small>04</small></a></li>
-    <li><a href="../contact.html" data-nav="contact">Contact <small>05</small></a></li>
-  </ul>
+<div class="mobile-menu" id="mobile-menu" data-lenis-prevent>
+  <div class="mobile-menu__top" data-mm>
+    <span><span class="live-dot"></span>Adelaide · <span data-clock></span></span>
+    <span>Menu</span>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li data-mm><a href="../index.html" data-nav="home"><small>01</small><span>Home</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../projects/index.html" data-nav="projects" aria-current="page"><small>02</small><span>Projects</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../about.html" data-nav="about"><small>03</small><span>About</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="../contact.html" data-nav="contact"><small>04</small><span>Contact</span><i aria-hidden="true">→</i></a></li>
+    </ul>
+    <p class="mobile-menu__label" data-mm>Services</p>
+    <div class="mobile-menu__services">
+      <a href="../custom-houses.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 01</small><span>Custom Houses</span>
+      </a>
+      <a href="../development-projects.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 02</small><span>Development Projects</span>
+      </a>
+    </div>
+  </nav>
   <div class="mobile-menu__foot">
-    <span class="label">Talk to us</span>
-    <a href="tel:+61415386318">Khush Patel · Project Manager · 0415 386 318</a>
-    <a href="tel:+61406437761">Vivek Virani · Site Coordinator · 0406 437 761</a>
-    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+    <a class="mobile-menu__call" href="tel:+61415386318" data-mm><small>Call Khush</small><span>0415 386 318</span></a>
+    <a class="mobile-menu__call" href="tel:+61406437761" data-mm><small>Call Vivek</small><span>0406 437 761</span></a>
+    <a class="mobile-menu__mail" href="mailto:admin@hillsandharbour.com.au" data-mm><small>Email</small><span>admin@hillsandharbour.com.au</span></a>
   </div>
 </div>
 
@@ -213,7 +227,7 @@
   </div>
 </section>
 
-<a class="next-project" href="parafield-gardens.html" data-header="dark" data-cursor="Next">
+<a class="next-project" href="parafield-gardens.html" data-header="dark" data-cursor="Next" data-next-project="telowie-avenue">
   <div class="next-project__bg"><img src="../assets/img/projects/parafield-gardens-render.jpg" alt="" loading="lazy"></div>
   <div class="container next-project__inner">
     <p class="kicker">Next project</p>
@@ -235,8 +249,8 @@
   <div class="container">
     <div class="cta__row">
       <div class="cta__contacts">
-        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
-        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal><span class="label muted">Khush Patel</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani</span><a href="tel:+61406437761">0406 437 761</a></div>
         <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
       </div>
       <a class="btn btn--green" href="../contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>

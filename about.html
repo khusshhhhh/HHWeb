@@ -83,20 +83,34 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu__list">
-    <li><a href="index.html" data-nav="home">Home <small>00</small></a></li>
-    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
-    <li class="sub"><a href="custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
-    <li class="sub"><a href="development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
-    <li><a href="about.html" data-nav="about" aria-current="page">About <small>04</small></a></li>
-    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
-  </ul>
+<div class="mobile-menu" id="mobile-menu" data-lenis-prevent>
+  <div class="mobile-menu__top" data-mm>
+    <span><span class="live-dot"></span>Adelaide · <span data-clock></span></span>
+    <span>Menu</span>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li data-mm><a href="index.html" data-nav="home"><small>01</small><span>Home</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="projects/index.html" data-nav="projects"><small>02</small><span>Projects</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="about.html" data-nav="about" aria-current="page"><small>03</small><span>About</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="contact.html" data-nav="contact"><small>04</small><span>Contact</span><i aria-hidden="true">→</i></a></li>
+    </ul>
+    <p class="mobile-menu__label" data-mm>Services</p>
+    <div class="mobile-menu__services">
+      <a href="custom-houses.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 01</small><span>Custom Houses</span>
+      </a>
+      <a href="development-projects.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 02</small><span>Development Projects</span>
+      </a>
+    </div>
+  </nav>
   <div class="mobile-menu__foot">
-    <span class="label">Talk to us</span>
-    <a href="tel:+61415386318">Khush Patel · Project Manager · 0415 386 318</a>
-    <a href="tel:+61406437761">Vivek Virani · Site Coordinator · 0406 437 761</a>
-    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+    <a class="mobile-menu__call" href="tel:+61415386318" data-mm><small>Call Khush</small><span>0415 386 318</span></a>
+    <a class="mobile-menu__call" href="tel:+61406437761" data-mm><small>Call Vivek</small><span>0406 437 761</span></a>
+    <a class="mobile-menu__mail" href="mailto:admin@hillsandharbour.com.au" data-mm><small>Email</small><span>admin@hillsandharbour.com.au</span></a>
   </div>
 </div>
 
@@ -146,28 +160,79 @@
     </div>
     <div class="founders">
       <article class="founder" data-reveal>
-        <div class="founder__mark"><span>KP</span><span class="caption">Portrait to come</span></div>
-        <div class="founder__name"><h3 class="display-sm">Khush Patel</h3><span class="founder__role">Co-founder · Project Manager</span></div>
-        <p class="muted">Khush runs the project from the first brief to handover: schedule, budget, consultants and approvals. If you want to know where your project stands, he is the person to call.</p>
-        <ul class="founder__skills"><li>Project management</li><li>Scheduling</li><li>Budgets</li><li>Approvals</li></ul>
+        <button class="founder__mark" type="button" data-modal-open="founder-kp" data-cursor="Profile" aria-label="Open Khush Patel's profile"><span>KP</span><span class="caption">Portrait to come</span><span class="founder__open">View profile <i aria-hidden="true">+</i></span></button>
+        <div class="founder__name"><h3 class="display-sm">Khush Patel</h3><span class="founder__role">Co-founder</span></div>
+        <p class="muted">Substantial experience in project management, administration and planning. Khush keeps the programme, the paperwork and the approvals moving.</p>
+        <ul class="founder__skills"><li>Project management</li><li>Administration</li><li>Planning</li></ul>
         <div class="founder__contact">
           <a href="tel:+61415386318">0415 386 318</a>
-          <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+          <button class="link-arrow founder__more" type="button" data-modal-open="founder-kp">Read profile <span class="arrow">→</span></button>
         </div>
       </article>
       <article class="founder" data-reveal style="--d:150ms">
-        <div class="founder__mark"><span>VV</span><span class="caption">Portrait to come</span></div>
-        <div class="founder__name"><h3 class="display-sm">Vivek Virani</h3><span class="founder__role">Co-founder · Site Coordinator</span></div>
-        <p class="muted">Vivek runs the site. He coordinates trades and deliveries, walks the site every week and checks the work against the plans before each stage is signed off.</p>
-        <ul class="founder__skills"><li>Site coordination</li><li>Trades</li><li>Inspections</li><li>Quality</li></ul>
+        <button class="founder__mark" type="button" data-modal-open="founder-vv" data-cursor="Profile" aria-label="Open Vivek Virani's profile"><span>VV</span><span class="caption">Portrait to come</span><span class="founder__open">View profile <i aria-hidden="true">+</i></span></button>
+        <div class="founder__name"><h3 class="display-sm">Vivek Virani</h3><span class="founder__role">Co-founder</span></div>
+        <p class="muted">More than five years supervising building sites. Vivek oversees the work on the ground and manages and organises the trades.</p>
+        <ul class="founder__skills"><li>Site supervision</li><li>Trade management</li><li>Organising</li></ul>
         <div class="founder__contact">
           <a href="tel:+61406437761">0406 437 761</a>
-          <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+          <button class="link-arrow founder__more" type="button" data-modal-open="founder-vv">Read profile <span class="arrow">→</span></button>
         </div>
       </article>
     </div>
   </div>
 </section>
+
+<div class="modal" id="founder-kp" role="dialog" aria-modal="true" aria-labelledby="founder-kp-title" aria-hidden="true">
+  <div class="modal__scrim" data-modal-close></div>
+  <div class="modal__panel grid-bg" data-lenis-prevent>
+    <div class="modal__bar"><span>Co-founder · 01 / 02</span><button class="modal__close" type="button" data-modal-close aria-label="Close profile"><span></span><span></span></button></div>
+    <div class="profile">
+      <div class="profile__mark" data-m><span>KP</span><span class="caption">Portrait to come</span></div>
+      <div class="profile__body">
+        <p class="kicker" data-m>Hills &amp; Harbour</p>
+        <h2 class="display-lg" id="founder-kp-title" data-m>Khush Patel</h2>
+        <p class="profile__lead" data-m>Khush has substantial experience in project management, administration and planning. He keeps the programme, the paperwork and the approvals moving, so you always know where your project stands.</p>
+        <ol class="profile__list">
+          <li data-m><span>01</span><div><h3>Project management</h3><p>Programmes, budgets and consultants kept on one schedule, from the first brief to handover.</p></div></li>
+          <li data-m><span>02</span><div><h3>Admin work</h3><p>Contracts, documents, invoices and reports kept in order and easy to follow.</p></div></li>
+          <li data-m><span>03</span><div><h3>Planning</h3><p>Approvals, lodgements and the order of work mapped out before anything starts on site.</p></div></li>
+        </ol>
+        <div class="profile__actions" data-m>
+          <a class="btn btn--green" href="tel:+61415386318">Call Khush · 0415 386 318</a>
+          <a class="btn" href="mailto:admin@hillsandharbour.com.au">Email</a>
+        </div>
+        <button class="profile__next" type="button" data-modal-open="founder-vv" data-m><small>Next co-founder</small><span>Vivek Virani <i aria-hidden="true">→</i></span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="founder-vv" role="dialog" aria-modal="true" aria-labelledby="founder-vv-title" aria-hidden="true">
+  <div class="modal__scrim" data-modal-close></div>
+  <div class="modal__panel grid-bg" data-lenis-prevent>
+    <div class="modal__bar"><span>Co-founder · 02 / 02</span><button class="modal__close" type="button" data-modal-close aria-label="Close profile"><span></span><span></span></button></div>
+    <div class="profile">
+      <div class="profile__mark" data-m><span>VV</span><span class="caption">Portrait to come</span><span class="profile__stat"><b>5+</b>years on site</span></div>
+      <div class="profile__body">
+        <p class="kicker" data-m>Hills &amp; Harbour</p>
+        <h2 class="display-lg" id="founder-vv-title" data-m>Vivek Virani</h2>
+        <p class="profile__lead" data-m>Vivek has more than five years of experience supervising building sites. He oversees the work on the ground, manages and organises the trades, and makes sure each stage is done properly before the next one begins.</p>
+        <ol class="profile__list">
+          <li data-m><span>01</span><div><h3>Site supervision</h3><p>Day-to-day supervision of the works, checked against the plans.</p></div></li>
+          <li data-m><span>02</span><div><h3>Site oversight</h3><p>Progress, quality and safety watched closely on every visit.</p></div></li>
+          <li data-m><span>03</span><div><h3>Trade management</h3><p>The right trades booked in the right order, and held to the standard.</p></div></li>
+          <li data-m><span>04</span><div><h3>Organising</h3><p>Deliveries, materials and site schedules coordinated so nobody waits.</p></div></li>
+        </ol>
+        <div class="profile__actions" data-m>
+          <a class="btn btn--green" href="tel:+61406437761">Call Vivek · 0406 437 761</a>
+          <a class="btn" href="mailto:admin@hillsandharbour.com.au">Email</a>
+        </div>
+        <button class="profile__next" type="button" data-modal-open="founder-kp" data-m><small>Next co-founder</small><span>Khush Patel <i aria-hidden="true">→</i></span></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="band band--black" data-header="dark">
   <div class="container">
@@ -217,8 +282,6 @@
         <canvas></canvas>
         <div class="dotmap__pin" data-lon="138.6145" data-lat="-34.8765">Broadview<small>Adelaide, SA</small></div>
         <div class="dotmap__pin dotmap__pin--muted" data-lon="138.6005" data-lat="-34.948">Adelaide CBD</div>
-        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.43" data-lat="-34.93">Gulf St Vincent</div>
-        <div class="dotmap__pin dotmap__pin--muted" data-lon="138.705" data-lat="-34.955">Adelaide Hills</div>
       </div>
     </div>
   </div>
@@ -238,8 +301,8 @@
   <div class="container">
     <div class="cta__row">
       <div class="cta__contacts">
-        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
-        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal><span class="label muted">Khush Patel</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani</span><a href="tel:+61406437761">0406 437 761</a></div>
         <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
       </div>
       <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>

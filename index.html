@@ -83,20 +83,34 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu__list">
-    <li><a href="index.html" data-nav="home" aria-current="page">Home <small>00</small></a></li>
-    <li><a href="projects/index.html" data-nav="projects">Projects <small>01</small></a></li>
-    <li class="sub"><a href="custom-houses.html" data-nav="custom">Custom Houses <small>02</small></a></li>
-    <li class="sub"><a href="development-projects.html" data-nav="development">Development Projects <small>03</small></a></li>
-    <li><a href="about.html" data-nav="about">About <small>04</small></a></li>
-    <li><a href="contact.html" data-nav="contact">Contact <small>05</small></a></li>
-  </ul>
+<div class="mobile-menu" id="mobile-menu" data-lenis-prevent>
+  <div class="mobile-menu__top" data-mm>
+    <span><span class="live-dot"></span>Adelaide · <span data-clock></span></span>
+    <span>Menu</span>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li data-mm><a href="index.html" data-nav="home" aria-current="page"><small>01</small><span>Home</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="projects/index.html" data-nav="projects"><small>02</small><span>Projects</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="about.html" data-nav="about"><small>03</small><span>About</span><i aria-hidden="true">→</i></a></li>
+      <li data-mm><a href="contact.html" data-nav="contact"><small>04</small><span>Contact</span><i aria-hidden="true">→</i></a></li>
+    </ul>
+    <p class="mobile-menu__label" data-mm>Services</p>
+    <div class="mobile-menu__services">
+      <a href="custom-houses.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 01</small><span>Custom Houses</span>
+      </a>
+      <a href="development-projects.html" data-mm>
+        <span class="mobile-menu__img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=480&q=60" alt="" loading="lazy"></span>
+        <small>Service 02</small><span>Development Projects</span>
+      </a>
+    </div>
+  </nav>
   <div class="mobile-menu__foot">
-    <span class="label">Talk to us</span>
-    <a href="tel:+61415386318">Khush Patel · 0415 386 318</a>
-    <a href="tel:+61406437761">Vivek Virani · 0406 437 761</a>
-    <a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a>
+    <a class="mobile-menu__call" href="tel:+61415386318" data-mm><small>Call Khush</small><span>0415 386 318</span></a>
+    <a class="mobile-menu__call" href="tel:+61406437761" data-mm><small>Call Vivek</small><span>0406 437 761</span></a>
+    <a class="mobile-menu__mail" href="mailto:admin@hillsandharbour.com.au" data-mm><small>Email</small><span>admin@hillsandharbour.com.au</span></a>
   </div>
 </div>
 
@@ -142,27 +156,74 @@
 </section>
 
 <!-- ============ EXPANDING WINDOW ============ -->
-<section class="expand" id="window" data-header="dark" aria-label="Right block, right build">
-  <div class="expand__frame">
-    <img src="assets/img/projects/colonial-elevation.webp" alt="A two-storey rendered home with a colonial facade, tall arched window and black-framed glazing">
-    <div class="expand__shade"></div>
+<section class="blueprint grid-bg" id="window" data-header="dark" aria-label="Right block, right build">
+  <div class="blueprint__head">
+    <p class="kicker">From drawing to doorstep</p>
+    <p class="blueprint__words" aria-hidden="true">Right <span class="blueprint__roll"><span class="blueprint__roll-inner"><span>block.</span><span>build.</span></span></span></p>
   </div>
-  <div class="expand__ground" aria-hidden="true"></div>
-  <div class="expand__plot" aria-hidden="true">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x="0" y="0" width="100" height="100" pathLength="1"/></svg>
-    <span class="expand__peg" style="left:0;top:0"></span><span class="expand__peg" style="right:0;top:0"></span>
-    <span class="expand__peg" style="left:0;bottom:0"></span><span class="expand__peg" style="right:0;bottom:0"></span>
-    <div class="expand__dim"><span>Frontage</span></div>
-    <span class="expand__tag expand__tag--lot">Lot 01</span>
-    <span class="expand__tag expand__tag--stage">Stage · <b data-expand-stage>Site</b></span>
+  <div class="blueprint__frame">
+    <div class="blueprint__photo"><img src="assets/img/projects/telowie-avenue-render.webp" alt="Two-storey home with a rendered upper frame, dark vertical cladding, a stone pier and a timber front door" loading="lazy"><div class="blueprint__shade"></div></div>
+    <svg class="blueprint__lines" viewBox="0 0 1448 1086" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g class="bp-site">
+        <path class="bl bl--thin" pathLength="1" d="M0 862 H1448"/>
+        <path class="bl bl--dash" pathLength="1" d="M0 1002 H1448 M0 1052 H1448"/>
+        <path class="bl bl--thin" pathLength="1" d="M252 862 L40 1002 M820 862 V1002"/>
+        <path class="bl bl--green" pathLength="1" d="M60 862 V830 h22 l-7 8 7 8 h-22 M1388 862 V830 h22 l-7 8 7 8 h-22"/>
+      </g>
+      <g class="bp-walls">
+        <path class="bl" pathLength="1" d="M180 862 V480 H452"/>
+        <path class="bl" pathLength="1" d="M1185 553 V862 M1185 540 H1272 V862"/>
+        <path class="bl bl--thin" pathLength="1" d="M440 196 V480 M1195 196 V540"/>
+      </g>
+      <g class="bp-frame">
+        <rect class="bl bl--bold" pathLength="1" x="450" y="112" width="735" height="441"/>
+        <rect class="bl" pathLength="1" x="510" y="178" width="615" height="318"/>
+      </g>
+      <g class="bp-roof">
+        <path class="bl" pathLength="1" d="M582 112 L782 55 H818 L1038 112"/>
+        <path class="bl bl--thin" pathLength="1" d="M640 96 V112 M700 79 V112 M760 61 V112 M820 55 V112 M880 72 V112 M940 87 V112 M1000 102 V112"/>
+        <path class="bl" pathLength="1" d="M378 184 L438 166 H450 M378 184 V196 H450 M1185 166 H1198 L1258 184 V196 H1185"/>
+        <path class="bl" pathLength="1" d="M1185 520 H1230 L1272 540"/>
+      </g>
+      <g class="bp-open">
+        <rect class="bl" pathLength="1" x="541" y="228" width="250" height="268"/>
+        <path class="bl bl--thin" pathLength="1" d="M627 228 V496 M711 228 V496"/>
+        <rect class="bl" pathLength="1" x="899" y="230" width="59" height="252"/>
+        <rect class="bl" pathLength="1" x="1036" y="230" width="72" height="252"/>
+        <rect class="bl" pathLength="1" x="823" y="178" width="58" height="318"/>
+        <rect class="bl" pathLength="1" x="823" y="553" width="58" height="309"/>
+        <path class="bl bl--thin" pathLength="1" d="M823 220 H881 M823 262 H881 M823 305 H881 M823 348 H881 M823 391 H881 M823 434 H881 M823 476 H881 M823 596 H881 M823 640 H881 M823 684 H881 M823 728 H881 M823 772 H881 M823 816 H881"/>
+        <rect class="bl" pathLength="1" x="252" y="600" width="568" height="258"/>
+        <path class="bl bl--thin" pathLength="1" d="M252 652 H820 M252 704 H820 M252 756 H820 M252 808 H820"/>
+        <rect class="bl" pathLength="1" x="884" y="588" width="124" height="270"/>
+        <path class="bl bl--thin" pathLength="1" d="M995 690 V780 M884 588 L1008 723 L884 858"/>
+        <rect class="bl" pathLength="1" x="1036" y="588" width="72" height="270"/>
+        <rect class="bl" pathLength="1" x="1112" y="553" width="73" height="309"/>
+      </g>
+      <g class="bp-dims">
+        <path class="bl bl--dim" pathLength="1" d="M450 26 H1185 M450 14 V38 M1185 14 V38"/>
+        <path class="bl bl--dim" pathLength="1" d="M110 112 V862 M98 112 H122 M98 862 H122 M98 480 H122"/>
+        <text class="bt" x="817" y="18" text-anchor="middle">UPPER FRAME</text>
+        <text class="bt" x="92" y="300" text-anchor="middle" transform="rotate(-90 92 300)">LEVEL 1</text>
+        <text class="bt" x="92" y="680" text-anchor="middle" transform="rotate(-90 92 680)">GROUND</text>
+        <text class="bt" x="1300" y="884">FFL ±0.00</text>
+        <text class="bt bt--green" x="60" y="884">LOT 01</text>
+      </g>
+    </svg>
+    <span class="blueprint__scan" aria-hidden="true"></span>
+    <span class="blueprint__corner blueprint__corner--tl" aria-hidden="true"></span><span class="blueprint__corner blueprint__corner--tr" aria-hidden="true"></span>
+    <span class="blueprint__corner blueprint__corner--bl" aria-hidden="true"></span><span class="blueprint__corner blueprint__corner--br" aria-hidden="true"></span>
   </div>
-  <p class="expand__words" aria-hidden="true">Right <span class="expand__roll"><span class="expand__roll-inner"><span>block.</span><span>build.</span></span></span></p>
-  <div class="expand__copy">
+  <div class="blueprint__meta" aria-hidden="true">
+    <span>Elevation · Telowie Avenue</span>
+    <span class="blueprint__stage">Stage · <b data-bp-stage>Drawing</b></span>
+  </div>
+  <div class="blueprint__copy">
     <div>
       <p class="kicker">One team, start to finish</p>
-      <p class="display-md mt-s" style="max-width:16ch">Every step, managed by the same two people.</p>
+      <p class="display-md mt-s" style="max-width:16ch">From the first line to the front door.</p>
     </div>
-    <span class="caption" style="color:#bdbdbd">Indicative imagery</span>
+    <a class="link-arrow" href="projects/telowie-avenue.html" style="color:#fff">Telowie Avenue <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -433,8 +494,8 @@
   <div class="container">
     <div class="cta__row">
       <div class="cta__contacts">
-        <div data-reveal><span class="label muted">Khush Patel · Project Manager</span><a href="tel:+61415386318">0415 386 318</a></div>
-        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani · Site Coordinator</span><a href="tel:+61406437761">0406 437 761</a></div>
+        <div data-reveal><span class="label muted">Khush Patel</span><a href="tel:+61415386318">0415 386 318</a></div>
+        <div data-reveal style="--d:100ms"><span class="label muted">Vivek Virani</span><a href="tel:+61406437761">0406 437 761</a></div>
         <div data-reveal style="--d:200ms"><span class="label muted">Email</span><a href="mailto:admin@hillsandharbour.com.au">admin@hillsandharbour.com.au</a></div>
       </div>
       <a class="btn btn--green" href="contact.html" data-magnetic data-reveal>Talk to us <span class="arrow">→</span></a>
