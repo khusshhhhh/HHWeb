@@ -620,7 +620,7 @@
   const nextEl = $('[data-next-project]');
   if (nextEl) {
     const LIST = [
-      ['glenunga', 'Glenunga', '../assets/img/projects/glenunga-render.webp', 'Development · In planning'],
+      ['glenunga', 'Glenunga', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=72', 'Development · In planning'],
       ['ingle-farm', 'Ingle Farm', '../assets/img/projects/ingle-farm-exterior.jpg', 'Development · Complete'],
       ['parafield-gardens', 'Parafield Gardens', '../assets/img/projects/parafield-gardens-render.jpg', 'Development · Planning granted'],
       ['payneham-south', 'Payneham South', '../assets/img/projects/payneham-south-front.jpg', 'Custom house · In construction'],
@@ -630,7 +630,7 @@
       ['salisbury-downs', 'Salisbury Downs', '../assets/img/projects/salisbury-downs-render.webp', 'Development · Construction started'],
       ['salisbury-downs-residence', 'Salisbury Downs Residence', '../assets/img/projects/salisbury-downs-residence-render.webp', 'Custom house · Starts soon'],
       ['marion', 'Marion', '../assets/img/projects/marion-render.webp', 'Development · Starts soon'],
-      ['davoren-park', 'Davoren Park', 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2000&q=72', 'Development · Approved'],
+      ['davoren-park', 'Davoren Park', '../assets/img/projects/davoren-park-render.webp', 'Development · Approved'],
     ];
     let last = '';
     try { last = sessionStorage.getItem('hh-next') || ''; } catch (_) {}
