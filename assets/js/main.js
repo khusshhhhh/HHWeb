@@ -508,6 +508,7 @@
       $('[data-enquire-homes]', devModal).textContent = has ? o.dataset.homes : 'Townhouses and new homes';
       $('[data-enquire-where]', devModal).textContent = has ? o.dataset.where : 'Adelaide, SA';
       const src = has ? o.dataset.img : '';
+      img.alt = has ? `${o.value}, ${o.dataset.where || 'Adelaide'} development by Hills & Harbour` : '';
       devModal.classList.toggle('has-img', !!src);
       if (src && img.getAttribute('src') !== src) { img.classList.remove('is-in'); img.onload = () => img.classList.add('is-in'); img.src = src; }
     };
