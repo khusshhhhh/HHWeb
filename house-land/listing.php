@@ -12,7 +12,7 @@ if (!$r) {
 
 $imgs = listing_images($r['id']);
 $features = listing_features($r);
-$where = $r['address'] ?: $r['suburb'];
+$where = listing_where($r);
 $hasMap = $r['lat'] !== null && $r['lng'] !== null;
 $facts = array_filter([
   'Bedrooms' => $r['bedrooms'],
@@ -27,21 +27,12 @@ $og = $imgs ? 'https://hillsandharbour.com.au/assets/uploads/listings/' . $imgs[
 site_top($r['title'] . ' · House & Land · Hills & Harbour', $desc, '/house-land/' . $r['slug'], $og);
 ?>
 
-<section class="listing-head band--white" data-header="light">
+<section class="listing-page band--white" data-header="light">
   <div class="container">
-    <nav class="page-hero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="./">House &amp; Land</a><span>/</span><span><?= e($r['title']) ?></span></nav>
-    <h1 class="display-lg"><?= e($r['title']) ?></h1>
-    <div class="listing-head__row">
-      <div><p class="listing-price"><?= e($r['price'] ?: 'Price on request') ?></p><p class="muted"><?= e($where) ?></p></div>
-      <?= status_chip($r['status']) ?>
-    </div>
-  </div>
-</section>
+    <nav class="page-hero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="./">House &amp; Land</a><span>/</span><span aria-current="page"><?= e($r['title']) ?></span></nav>
 
-<section class="band band--white" data-header="light" style="padding-top:0">
-  <div class="container">
     <?php if ($imgs): ?>
-    <div class="gallery" data-gallery style="margin-bottom:clamp(40px,5vw,72px)">
+    <div class="gallery" data-gallery>
       <div class="gallery__main mask-img"><img data-gallery-main src="../assets/uploads/listings/<?= e($imgs[0]['file']) ?>" alt="<?= e($r['title']) ?>, image 1"></div>
       <?php if (count($imgs) > 1): ?>
       <div class="gallery__thumbs" data-lenis-prevent>
@@ -55,6 +46,11 @@ site_top($r['title'] . ' · House & Land · Hills & Harbour', $desc, '/house-lan
 
     <div class="listing-layout">
       <div>
+        <header class="listing-title">
+          <div class="listing-title__top"><p class="listing-price"><?= e($r['price'] ?: 'Price on request') ?></p><?= status_chip($r['status']) ?></div>
+          <h1 class="listing-title__h"><?= e($r['title']) ?></h1>
+          <p class="muted"><?= e($where) ?></p>
+        </header>
         <?php if ($facts): ?>
         <dl class="listing-facts"><?php foreach ($facts as $k => $v): ?><div><dt><?= e($k) ?></dt><dd><?= e($v) ?></dd></div><?php endforeach; ?></dl>
         <?php endif; ?>
@@ -69,7 +65,7 @@ site_top($r['title'] . ' · House & Land · Hills & Harbour', $desc, '/house-lan
         <?php endif; ?>
       </div>
 
-      <aside class="listing-enquire">
+      <aside class="listing-enquire" id="enquire">
         <h2 class="display-sm">Ask about this package</h2>
         <form class="form" action="../send.php" method="post" novalidate data-enquiry>
           <input type="hidden" name="form" value="house-land">
@@ -100,6 +96,12 @@ site_top($r['title'] . ' · House & Land · Hills & Harbour', $desc, '/house-lan
     </div>
   </div>
 </section>
+
+<div class="listing-bar">
+  <p><?= e($r['price'] ?: 'Price on request') ?></p>
+  <a class="btn" href="tel:+61415386318">Call</a>
+  <a class="btn btn--green" href="#enquire">Enquire</a>
+</div>
 
 <?php if ($hasMap): ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">

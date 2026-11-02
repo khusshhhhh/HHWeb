@@ -29,20 +29,20 @@ site_top('House & Land Packages Adelaide · Hills & Harbour',
       <a class="btn btn--solid" href="../contact.html">Talk to us <span class="arrow">→</span></a>
     </div>
     <?php else: ?>
-    <div class="dev-grid">
+    <div class="listing-grid">
       <?php foreach ($rows as $i => $r):
-        $imgs = listing_images($r['id']);
-        $where = $r['suburb'] ?: $r['address']; ?>
-      <article class="dev-card" data-reveal style="--d:<?= ($i % 2) * 90 ?>ms">
-        <a class="dev-card__media mask-img mono-img" href="<?= e($r['slug']) ?>" data-cursor="View">
-          <?php if ($imgs): ?><img src="../assets/uploads/listings/<?= e($imgs[0]['file']) ?>" alt="<?= e($r['title'] . ', ' . $where) ?>" loading="lazy"><?php endif; ?>
+        $imgs = listing_images($r['id']); ?>
+      <article class="listing-card" data-reveal style="--d:<?= ($i % 2) * 90 ?>ms">
+        <a class="listing-card__media mask-img" href="<?= e($r['slug']) ?>" data-cursor="View" tabindex="-1" aria-hidden="true">
+          <?php if ($imgs): ?><img src="../assets/uploads/listings/<?= e($imgs[0]['file']) ?>" alt="" loading="lazy"><?php endif; ?>
+          <?= status_chip($r['status']) ?>
         </a>
-        <div class="dev-card__body">
-          <div class="dev-card__top"><span class="listing-card__price"><?= e($r['price'] ?: 'Price on request') ?></span><?= status_chip($r['status']) ?></div>
-          <h2 class="dev-card__title"><a href="<?= e($r['slug']) ?>"><?= e($r['title']) ?></a></h2>
-          <p class="dev-card__meta"><?= e($where) ?></p>
-          <?php if ($specs = listing_specs($r)): ?><p class="listing-specs"><?php foreach ($specs as $s): ?><span><?= e($s) ?></span><?php endforeach; ?></p><?php endif; ?>
-          <div class="dev-card__actions"><a class="link-arrow" href="<?= e($r['slug']) ?>">View package <span class="arrow">→</span></a></div>
+        <div class="listing-card__body">
+          <p class="listing-card__price"><?= e($r['price'] ?: 'Price on request') ?></p>
+          <h2 class="listing-card__title"><a href="<?= e($r['slug']) ?>"><?= e($r['title']) ?></a></h2>
+          <p class="listing-card__where"><?= e(listing_where($r)) ?></p>
+          <?php if ($specs = listing_specs($r)): ?><ul class="listing-specs"><?php foreach ($specs as $sp): ?><li><?= e($sp) ?></li><?php endforeach; ?></ul><?php endif; ?>
+          <a class="link-arrow" href="<?= e($r['slug']) ?>">View package <span class="arrow">→</span></a>
         </div>
       </article>
       <?php endforeach; ?>

@@ -1,6 +1,11 @@
 <?php
 // Page shell for the PHP pages in house-land/. The body chrome is the same markup as the static pages.
 
+// Changes whenever the file does, so browsers and host caches never serve an old copy
+function asset_version($file) {
+  return @filemtime(dirname(__DIR__) . '/assets/' . $file) ?: 1;
+}
+
 function site_top($title, $desc, $path, $image = 'https://hillsandharbour.com.au/assets/img/hh-logo-black.png') {
   $url = 'https://hillsandharbour.com.au' . $path;
   ?><!doctype html>
@@ -26,7 +31,7 @@ function site_top($title, $desc, $path, $image = 'https://hillsandharbour.com.au
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=<?= asset_version('css/style.css') ?>">
 <script>
   (function (r) {
     try {
@@ -43,5 +48,5 @@ function site_top($title, $desc, $path, $image = 'https://hillsandharbour.com.au
 }
 
 function site_bottom() {
-  readfile(__DIR__ . '/chrome-bottom.html');
+  echo str_replace('assets/js/main.js', 'assets/js/main.js?v=' . asset_version('js/main.js'), file_get_contents(__DIR__ . '/chrome-bottom.html'));
 }

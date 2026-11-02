@@ -231,8 +231,8 @@ if ($signedIn && isset($_GET['edit'])) {
 <title>House &amp; Land admin · Hills &amp; Harbour</title>
 <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(dirname(__DIR__) . '/assets/css/style.css') ?: 1 ?>">
+<link rel="stylesheet" href="../assets/css/admin.css?v=<?= @filemtime(dirname(__DIR__) . '/assets/css/admin.css') ?: 1 ?>">
 <?php if ($edit): ?><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"><?php endif; ?>
 </head>
 <body class="admin">

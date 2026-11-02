@@ -63,6 +63,15 @@ function listing_features($row) {
   return array_values(array_filter(array_map('trim', explode("\n", $row['features']))));
 }
 
+// Address and suburb together, without repeating the suburb if the address already has it
+function listing_where($row) {
+  $a = trim($row['address']);
+  $b = trim($row['suburb']);
+  if ($a === '' || $b === '') return $a . $b;
+  $town = trim(explode(',', $b)[0]);
+  return stripos($a, $town) !== false ? $a : $a . ', ' . $b;
+}
+
 // "4 bed", "2 bath", ... for whichever numbers the listing has
 function listing_specs($row) {
   $specs = [];
