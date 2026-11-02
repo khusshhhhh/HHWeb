@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://hillsandharbour.com.au/sitemap.xml
+Sitemap: https://hillsandharbour.com.au/house-land/sitemap

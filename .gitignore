@@ -7,3 +7,7 @@ __pycache__/
 
 # Created on the server by send.php; holds the form token secret
 send-config.php
+
+# Live House & Land data: the database, admin password and uploaded images stay on the server
+data/
+assets/uploads/listings/

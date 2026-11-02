@@ -103,7 +103,7 @@
     const tick = (now) => {
       const p = clamp((now - t0) / dur, 0, 1);
       const e = 1 - Math.pow(1 - p, 3);
-      if (count) count.textContent = String(Math.round(e * 100)).padStart(3, '0');
+      if (count) count.textContent = Math.round(e * 100);
       if (bar) bar.style.transform = 'scaleX(' + e + ')';
       const pa = clamp(e * 1.6, 0, 1), pb = clamp(e * 1.6 - 0.45, 0, 1);
       if (a) a.style.clipPath = 'inset(0 ' + (100 - pa * 100) + '% 50% 0)';
@@ -521,6 +521,16 @@
       fill();
     });
   }
+
+  /* ---------- Listing gallery: thumbnails swap the main image ---------- */
+  $$('[data-gallery]').forEach((g) => {
+    const main = $('[data-gallery-main]', g);
+    $$('[data-gallery-thumb]', g).forEach((btn) => btn.addEventListener('click', () => {
+      main.src = btn.dataset.src;
+      main.alt = btn.dataset.alt;
+      $$('[data-gallery-thumb]', g).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    }));
+  });
 
   /* ---------- "I'm not a robot" check ---------- */
   // Ticking asks the server for a signed, timestamped token; send.php rejects posts without a valid one

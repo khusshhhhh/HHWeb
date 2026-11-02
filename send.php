@@ -102,12 +102,19 @@ foreach ($labels as $key => $label) {
 }
 
 $isDev = $form === 'development';
-$subject = $isDev
-  ? 'Development enquiry · ' . ($rows['Development project'] ?? 'General') . ' · ' . $name
-  : 'Project enquiry · ' . ($rows['Services'] ?? 'General') . ' · ' . $name;
+$isListing = $form === 'house-land';
+if ($isListing && isset($rows['Development project'])) {
+  $rows = array_slice($rows, 0, 3) + ['House & land package' => $rows['Development project']] + $rows;
+  unset($rows['Development project']);
+}
+$subject = $isListing
+  ? 'House & land enquiry · ' . ($rows['House & land package'] ?? 'General') . ' · ' . $name
+  : ($isDev
+    ? 'Development enquiry · ' . ($rows['Development project'] ?? 'General') . ' · ' . $name
+    : 'Project enquiry · ' . ($rows['Services'] ?? 'General') . ' · ' . $name);
 
 $w = max(array_map('mb_strlen', array_keys($rows))) + 2;
-$body = ($isDev ? "New development project enquiry" : "New project enquiry") . " from hillsandharbour.com.au\n";
+$body = ($isListing ? "New house and land enquiry" : ($isDev ? "New development project enquiry" : "New project enquiry")) . " from hillsandharbour.com.au\n";
 $body .= str_repeat('-', 48) . "\n";
 foreach ($rows as $k => $v) $body .= str_pad($k . ':', $w) . $v . "\n";
 $body .= str_repeat('-', 48) . "\n\n";

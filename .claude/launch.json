@@ -11,6 +11,16 @@
       "port": 5173
     },
     {
+      "name": "hh-php",
+      "runtimeExecutable": "php",
+      "runtimeArgs": [
+        "-S",
+        "localhost:5175",
+        ".claude/router.php"
+      ],
+      "port": 5175
+    },
+    {
       "name": "hh-site-plain",
       "runtimeExecutable": "python",
       "runtimeArgs": [

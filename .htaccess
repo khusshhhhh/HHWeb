@@ -5,8 +5,19 @@
 #   /projects/glenunga    -> projects/glenunga.html
 #   /blog/                -> blog/index.html
 #   /blog/<article>       -> blog/<article>.html
+#   /house-land/          -> house-land/index.php
+#   /house-land/<listing> -> house-land/listing.php
+#   /admin/               -> admin/index.php
 Options -MultiViews
+DirectoryIndex index.html index.php
 RewriteEngine On
+
+# The database and PHP includes are never served
+RewriteRule ^(data|includes)(/|$) - [F,L,NC]
+
+# House & Land listings
+RewriteRule ^house-land/sitemap$ house-land/sitemap.php [L]
+RewriteRule ^house-land/([a-z0-9-]+)$ house-land/listing.php?slug=$1 [L,QSA]
 
 # Old flat URLs from before the folders: /project-glenunga -> /projects/glenunga
 RewriteRule ^(projects|blog)\.html$ /$1/ [R=301,L,NC]
