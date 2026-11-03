@@ -631,17 +631,21 @@
   const nextEl = $('[data-next-project]');
   if (nextEl) {
     const LIST = [
-      ['glenunga', 'Glenunga', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=72', 'Development · In planning'],
-      ['ingle-farm', 'Ingle Farm', '../assets/img/projects/ingle-farm-exterior.jpg', 'Development · Complete'],
-      ['parafield-gardens', 'Parafield Gardens', '../assets/img/projects/parafield-gardens-render.jpg', 'Development · Planning granted'],
-      ['payneham-south', 'Payneham South', '../assets/img/projects/payneham-south-front.jpg', 'Custom house · In construction'],
-      ['telowie-avenue', 'Telowie Avenue', '../assets/img/projects/telowie-avenue-render.webp', 'Custom house · In construction'],
-      ['holden-hill', 'Holden Hill', '../assets/img/projects/holden-hill-render.webp', 'Development · Starts soon'],
-      ['enfield', 'Enfield', '../assets/img/projects/enfield-render.webp', 'Development · Construction started'],
-      ['salisbury-downs', 'Salisbury Downs', '../assets/img/projects/salisbury-downs-render.webp', 'Development · Construction started'],
-      ['salisbury-downs-residence', 'Salisbury Downs Residence', '../assets/img/projects/salisbury-downs-residence-render.webp', 'Custom house · Starts soon'],
-      ['marion', 'Marion', '../assets/img/projects/marion-render.webp', 'Development · Starts soon'],
-      ['davoren-park', 'Davoren Park', '../assets/img/projects/davoren-park-render.webp', 'Development · Approved'],
+      ['glenunga', 'Portrush, Glenunga', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=72', 'Development · In planning'],
+      ['ingle-farm', 'Albara, Ingle Farm', '../assets/img/projects/ingle-farm-exterior.jpg', 'Development · Complete'],
+      ['parafield-gardens', 'Taylor, Parafield Gardens', '../assets/img/projects/parafield-gardens-render.jpg', 'Development · Planning granted'],
+      ['payneham-south', 'Coorara, Payneham South', '../assets/img/projects/payneham-south-front.jpg', 'Custom house · In construction'],
+      ['telowie-avenue', 'Telowie, Ingle Farm', '../assets/img/projects/telowie-avenue-render.webp', 'Custom house · In construction'],
+      ['holden-hill', 'Elliot, Holden Hill', '../assets/img/projects/holden-hill-render.webp', 'Development · Starts soon'],
+      ['enfield', 'Corconda, Enfield', '../assets/img/projects/enfield-render.webp', 'Development · Construction started'],
+      ['elizabeth-east', 'Ballard, Elizabeth East', '../assets/img/projects/elizabeth-east-render.webp', 'Development · In planning'],
+      ['northfield', 'Wright, Northfield', '../assets/img/projects/northfield-render.webp', 'Development · Approved'],
+      ['salisbury-downs', 'Mayo, Salisbury Downs', '../assets/img/projects/salisbury-downs-render.webp', 'Development · Construction started'],
+      ['salisbury-downs-residence', 'Amsterdam, Salisbury Downs', '../assets/img/projects/salisbury-downs-residence-render.webp', 'Custom house · Starts soon'],
+      ['rostrevor', 'Moyle, Rostrevor', '../assets/img/projects/rostrevor-render.webp', 'Custom house · In development approval'],
+      ['valley-view', 'Penelope, Valley View', '../assets/img/projects/valley-view-render.webp', 'Custom house · Completion Nov 2026'],
+      ['marion', 'Norfolk, Marion', '../assets/img/projects/marion-render.webp', 'Development · Starts soon'],
+      ['davoren-park', 'Peachey, Davoren Park', '../assets/img/projects/davoren-park-render.webp', 'Development · Approved'],
     ];
     let last = '';
     try { last = sessionStorage.getItem('hh-next') || ''; } catch (_) {}
